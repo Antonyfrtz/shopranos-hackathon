@@ -15,6 +15,7 @@ const filterlistdefault = {
             ShowClearFilter: false,
             brands: [],
             categories: [],
+            inputText: '',
             additionalFields: this.model?.additionalFields,
             DisplayModeEnum: {
                 Grid: 0,
@@ -101,6 +102,15 @@ const filterlistdefault = {
             },
             null, this.model?.pageSize, this.model?.sortOrder
         );
+
+        let queryString = window.location.search;
+        let urlParams = new URLSearchParams(queryString);
+
+        if (urlParams.has('s')) {
+            if (this.inputText !== urlParams.get('s')) {
+                this.inputText = urlParams.get('s');
+            }
+        }
     },
     methods: {
         CalculateRange(numMin, numMax) {
@@ -244,6 +254,10 @@ const filterlistdefault = {
             }
         },
         handleInputChange() {
+            if (this.inputText)
+                this.title = this.inputText;
+            else
+                this.title = this._filterList.record.title;
             this.filterData.searchText = this.inputText;
             this.sendFilterRequest(1);
         },

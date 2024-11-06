@@ -1,0 +1,301 @@
+<template>
+<div :class="$style.event3Parent">
+<div :class="$style.event3">
+<div :class="$style.sectionTitle">
+<div :class="$style.taglineWrapper">
+<div :class="$style.tagline">Explore</div>
+</div>
+<div :class="$style.content">
+<b :class="$style.events">Events</b>
+<div :class="$style.text">Discover exciting travel events happening soon. Join us for unforgettable experiences around the globe!</div>
+</div>
+</div>
+<div :class="$style.content1">
+<div :class="$style.categories">
+<div :class="$style.button">
+<div :class="$style.viewAll">View all</div>
+</div>
+<div :class="$style.button1">
+<div :class="$style.viewAll">Adventure Tours</div>
+</div>
+<div :class="$style.button1">
+<div :class="$style.viewAll">Cultural Experiences</div>
+</div>
+<div :class="$style.button1">
+<div :class="$style.viewAll">Food Festivals</div>
+</div>
+<div :class="$style.button1">
+<div :class="$style.viewAll">Nature Retreats</div>
+</div>
+</div>
+<div :class="$style.content2">
+<div :class="$style.card">
+<img :class="$style.placeholderImageIcon" alt="" src="Placeholder Image.png" />
+<div :class="$style.content3">
+<div :class="$style.content4">
+<div :class="$style.eventTitle">
+<b :class="$style.heading">Mountain Hiking Trip</b>
+<div :class="$style.textOnlyfalseAlternatefal">
+<div :class="$style.tagline">Sold out</div>
+</div>
+</div>
+<div :class="$style.time">
+<div :class="$style.viewAll">Fri 09 Feb 2024</div>
+<div :class="$style.viewAll">•</div>
+<div :class="$style.viewAll">Denver</div>
+</div>
+</div>
+<div :class="$style.text2">Join us for a thrilling hike in the Rockies, surrounded by breathtaking views and nature.</div>
+</div>
+<div :class="$style.stylesecondarySmalltrueA">
+<div :class="$style.viewAll">Save my spot</div>
+</div>
+</div>
+<div :class="$style.card">
+<img :class="$style.placeholderImageIcon" alt="" src="Placeholder Image.png" />
+<div :class="$style.content3">
+<div :class="$style.content4">
+<div :class="$style.eventTitle1">
+<b :class="$style.heading1">Culinary Delight Fest</b>
+</div>
+<div :class="$style.time">
+<div :class="$style.viewAll">Sat 10 Feb 2024</div>
+<div :class="$style.viewAll">•</div>
+<div :class="$style.viewAll">Chicago</div>
+</div>
+</div>
+<div :class="$style.text2">Savor the best local dishes at this vibrant festival celebrating food from around the world.</div>
+</div>
+<div :class="$style.stylesecondarySmalltrueA">
+<div :class="$style.viewAll">Save my spot</div>
+</div>
+</div>
+<div :class="$style.card">
+<img :class="$style.placeholderImageIcon" alt="" src="Placeholder Image.png" />
+<div :class="$style.content3">
+<div :class="$style.content4">
+<div :class="$style.eventTitle1">
+<b :class="$style.heading1">Art in the Park</b>
+</div>
+<div :class="$style.time">
+<div :class="$style.viewAll">Sun 11 Feb 2024</div>
+<div :class="$style.viewAll">•</div>
+<div :class="$style.viewAll">New York</div>
+</div>
+</div>
+<div :class="$style.text2">Experience a day of creativity and inspiration at this outdoor art exhibition in the city.</div>
+</div>
+<div :class="$style.stylesecondarySmalltrueA">
+<div :class="$style.viewAll">Save my spot</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</template>
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+name: "Frame"})</script><style module>.tagline {
+position: relative;
+line-height: 150%;
+font-weight: 600;
+}
+.taglineWrapper {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+}
+.events {
+align-self: stretch;
+position: relative;
+line-height: 120%;
+}
+.text {
+align-self: stretch;
+position: relative;
+font-size: 18px;
+line-height: 150%;
+}
+.content {
+align-self: stretch;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+gap: 24px;
+font-size: 48px;
+}
+.sectionTitle {
+width: 768px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+gap: 16px;
+}
+.viewAll {
+position: relative;
+line-height: 150%;
+}
+.button {
+border: 1px solid #000;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+padding: 8px 16px;
+}
+.button1 {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+padding: 8px 16px;
+}
+.categories {
+align-self: stretch;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+.placeholderImageIcon {
+width: 144px;
+position: relative;
+height: 144px;
+object-fit: cover;
+}
+.heading {
+position: relative;
+line-height: 140%;
+}
+.textOnlyfalseAlternatefal {
+width: 68px;
+background-color: #eee;
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: flex-start;
+padding: 4px 8px;
+box-sizing: border-box;
+font-size: 14px;
+}
+.eventTitle {
+align-self: stretch;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+gap: 16px;
+}
+.time {
+align-self: stretch;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+gap: 8px;
+font-size: 14px;
+}
+.content4 {
+align-self: stretch;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+}
+.text2 {
+align-self: stretch;
+position: relative;
+font-size: 16px;
+line-height: 150%;
+}
+.content3 {
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+gap: 16px;
+}
+.stylesecondarySmalltrueA {
+width: 138px;
+border: 1px solid #000;
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+padding: 8px 20px;
+font-size: 16px;
+}
+.card {
+align-self: stretch;
+border-top: 1px solid #000;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+padding: 32px 0px;
+gap: 32px;
+}
+.heading1 {
+flex: 1;
+position: relative;
+line-height: 140%;
+}
+.eventTitle1 {
+align-self: stretch;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+}
+.content2 {
+align-self: stretch;
+border-bottom: 1px solid #000;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+font-size: 24px;
+}
+.content1 {
+width: 768px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 48px;
+text-align: left;
+}
+.event3 {
+position: absolute;
+top: 0px;
+left: 0px;
+background-color: #fff;
+width: 1440px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+padding: 112px 64px;
+box-sizing: border-box;
+gap: 80px;
+}
+.event3Parent {
+width: 100%;
+position: relative;
+background-color: #fff;
+height: 1192px;
+overflow: hidden;
+text-align: center;
+font-size: 16px;
+color: #000;
+font-family: Roboto;
+}
+</style>

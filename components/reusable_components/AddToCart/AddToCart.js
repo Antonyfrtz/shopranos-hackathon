@@ -12,7 +12,8 @@ const addtocart = {
             product: this.model,
             loadingKey: null,
             cartData: [],
-            totalProductQuantity: 0
+            totalProductQuantity: 0,
+            uniqueKey: (Math.floor(Math.random() * 10000) + 10000).toString().substring(1)
         }
     },
     beforeMount() {
@@ -38,11 +39,11 @@ const addtocart = {
     },
     mounted() {
         if (this.cartData && this.cartData.cartItems.find((p) => p.productVariantId === this.product.productVariants[0].id) !== undefined)
-            if (document.querySelector('#but-' + this.product.id) !== null) {
-                document.querySelector('#but-' + this.product.id).classList.remove('btn-secondary');
-                document.querySelector('#but-' + this.product.id).classList.add('btn-primary');
-                document.querySelector('#but-' + this.product.id).querySelector('.cart-item-circle').classList.remove('d-none');
-                document.querySelector('#but-' + this.product.id).querySelector('.s-plus').classList.add('d-none');
+            if (document.querySelector('#but-' + this.uniqueKey + '-' + this.product.id) !== null) {
+                document.querySelector('#but-' + this.uniqueKey + '-'  + this.product.id).classList.remove('btn-secondary');
+                document.querySelector('#but-' + this.uniqueKey + '-'  + this.product.id).classList.add('btn-primary');
+                document.querySelector('#but-' + this.uniqueKey + '-'  + this.product.id).querySelector('.cart-item-circle').classList.remove('d-none');
+                document.querySelector('#but-' + this.uniqueKey + '-'  + this.product.id).querySelector('.s-plus').classList.add('d-none');
             }
     },
     methods: {

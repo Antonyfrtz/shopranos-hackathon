@@ -14,8 +14,7 @@ const lastvisitedproductsdefault = {
     },
     beforeMount() {
         this.products = JSON.parse(localStorage.getItem("visitedProducts"));
-        console.log(this.products);
-        
+
         if (this.products == null || this.products.length === 0) return;
 
         let productIds = this.products.map(function (item) {
@@ -46,7 +45,7 @@ const lastvisitedproductsdefault = {
             this.lastVisitedProducts = products;
 
             if (this.lastVisitedProducts.findIndex((element) => element.link === path) > -1) {
-                
+
                 // this.lastVisitedProducts = this.lastVisitedProducts.splice(this.lastVisitedProducts.findIndex((element) => element.link === path), 1);
                 this.lastVisitedProducts = this.lastVisitedProducts.filter(element => element.link !== path)
             }

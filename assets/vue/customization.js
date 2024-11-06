@@ -164,11 +164,10 @@ function _buildProductSearchUrl(searchCriteria, endpoint) {
     const urlParameters = Object.keys(searchCriteria).filter(key => searchCriteria[key] != null)
         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(searchCriteria[key])}`)
         .join('&');
-        
     return `${baseUrl}${endpoint}?${urlParameters}`;
 }
 
-function _fetchData(url, callback) {    
+function _fetchData(url, callback) {
     axios.get(url)
         .then(response => {
             const totalCount = parseInt(response.headers['x-total-count']);

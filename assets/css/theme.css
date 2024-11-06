@@ -3114,14 +3114,31 @@ html body .error-wrapper img {
 }
 .btn-primary {
   --bs-btn-color: var(--body-bg-first-color);
-  --bs-btn-bg: var(--bs-primary);
-  --bs-btn-border-color: var(--bs-primary);
-  --bs-btn-disabled-bg: var(--bs-primary);
-  --bs-btn-disabled-border-color: var(--bs-primary);
-  --bs-btn-hover-bg: var(--bs-primary);
-  --bs-btn-hover-border-color: var(--bs-primary);
-  --bs-btn-active-bg: var(--bs-primary);
-  --bs-btn-active-border-color: var(--bs-primary);
+  --bs-btn-active-color: var(--body-bg-first-color);
+  --bs-btn-hover-color: var(--body-bg-first-color);
+  --bs-btn-disabled-color: var(--body-bg-first-color);
+  --bs-btn-bg: var(--btn-bg-color);
+  --bs-btn-border-color: var(--btn-bg-color);
+  --bs-btn-disabled-bg: var(--btn-bg-color);
+  --bs-btn-disabled-border-color: var(--btn-bg-color);
+  --bs-btn-hover-bg: var(--btn-bg-color);
+  --bs-btn-hover-border-color: var(--btn-bg-color);
+  --bs-btn-active-bg: var(--btn-bg-color);
+  --bs-btn-active-border-color: var(--btn-bg-color);
+}
+.btn-secondary {
+  --bs-btn-color: var(--body-primary-txt-color);
+  --bs-btn-active-color: var(--body-bg-second-color);
+  --bs-btn-hover-color: var(--body-bg-second-color);
+  --bs-btn-disabled-color: var(--body-bg-second-color);
+  --bs-btn-bg: var(--body-bg-second-color);
+  --bs-btn-border-color: var(--body-bg-second-color);
+  --bs-btn-disabled-bg: var(--body-primary-txt-color);
+  --bs-btn-disabled-border-color: var(--body-primary-txt-color);
+  --bs-btn-hover-bg: var(--body-primary-txt-color);
+  --bs-btn-hover-border-color: var(--body-primary-txt-color);
+  --bs-btn-active-bg: var(--body-primary-txt-color);
+  --bs-btn-active-border-color: var(--body-primary-txt-color);
 }
 .btn-outline-primary {
   --bs-btn-color: var(--bs-primary);
@@ -3238,6 +3255,16 @@ html body .error-wrapper img {
   line-height: 1;
   content: "\e915";
   transform: scaleX(-1);
+}
+.btn.added {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-disabled-bg: var(--bs-primary);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+  --bs-btn-active-bg: var(--bs-primary);
+  --bs-btn-active-border-color: var(--bs-primary);
 }
 
 .dropdown {
@@ -4126,34 +4153,6 @@ body.minimal footer .input-group {
 body.hasShadow footer .newsletter-wrap button {
   box-shadow: 0px 16px 40px 0px rgb(from var(--footer-txt-color) r g b/0.16);
 }
-body .btn-primary {
-  --bs-btn-color: var(--body-bg-first-color);
-  --bs-btn-active-color: var(--body-bg-first-color);
-  --bs-btn-hover-color: var(--body-bg-first-color);
-  --bs-btn-disabled-color: var(--body-bg-first-color);
-  --bs-btn-bg: var(--btn-bg-color);
-  --bs-btn-border-color: var(--btn-bg-color);
-  --bs-btn-disabled-bg: var(--btn-bg-color);
-  --bs-btn-disabled-border-color: var(--btn-bg-color);
-  --bs-btn-hover-bg: var(--btn-bg-color);
-  --bs-btn-hover-border-color: var(--btn-bg-color);
-  --bs-btn-active-bg: var(--btn-bg-color);
-  --bs-btn-active-border-color: var(--btn-bg-color);
-}
-body .btn-secondary {
-  --bs-btn-color: var(--body-primary-txt-color);
-  --bs-btn-active-color: var(--body-bg-second-color);
-  --bs-btn-hover-color: var(--body-bg-second-color);
-  --bs-btn-disabled-color: var(--body-bg-second-color);
-  --bs-btn-bg: var(--body-bg-second-color);
-  --bs-btn-border-color: var(--body-bg-second-color);
-  --bs-btn-disabled-bg: var(--body-primary-txt-color);
-  --bs-btn-disabled-border-color: var(--body-primary-txt-color);
-  --bs-btn-hover-bg: var(--body-primary-txt-color);
-  --bs-btn-hover-border-color: var(--body-primary-txt-color);
-  --bs-btn-active-bg: var(--body-primary-txt-color);
-  --bs-btn-active-border-color: var(--body-primary-txt-color);
-}
 body .btn-close {
   --bs-btn-close-color: var(--body-primary-txt-color) !important;
 }
@@ -4527,20 +4526,25 @@ body .topbar {
 body .product-single .product-gallery .side-product-swiper .swiper-slide.swiper-slide-thumb-active {
   border-color: var(--bs-primary);
 }
-body .product-single .product-info .product-variants .attribute .variantValues .variantValue input:checked ~ label {
+body .product-single .product-info .product-variants .attribute .variantValues .variantValue input:checked ~ label,
+body .product-single .product-info .bundle-product-variants .attribute .variantValues .variantValue input:checked ~ label {
   background-color: var(--bs-primary);
   color: var(--body-bg-first-color);
 }
-body .product-single .product-info .product-variants .attribute .variantValues .variantValue input:disabled ~ label:before {
+body .product-single .product-info .product-variants .attribute .variantValues .variantValue input:disabled ~ label:before,
+body .product-single .product-info .bundle-product-variants .attribute .variantValues .variantValue input:disabled ~ label:before {
   background: black;
 }
-body .product-single .product-info .product-variants .attribute .variantValues .variantValue input:disabled ~ label[for=black]:before {
+body .product-single .product-info .product-variants .attribute .variantValues .variantValue input:disabled ~ label[for=black]:before,
+body .product-single .product-info .bundle-product-variants .attribute .variantValues .variantValue input:disabled ~ label[for=black]:before {
   background: #c5c5c5;
 }
-body .product-single .product-info .product-variants .attribute.color .variantValues .variantValue input:checked ~ label span {
+body .product-single .product-info .product-variants .attribute.color .variantValues .variantValue input:checked ~ label span,
+body .product-single .product-info .bundle-product-variants .attribute.color .variantValues .variantValue input:checked ~ label span {
   border-color: var(--bs-primary);
 }
-body .product-single .product-info .product-variants .attribute.color .variantValues .variantValue label span {
+body .product-single .product-info .product-variants .attribute.color .variantValues .variantValue label span,
+body .product-single .product-info .bundle-product-variants .attribute.color .variantValues .variantValue label span {
   background-color: var(--bgColor);
   border-color: var(--bgColor);
 }

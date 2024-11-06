@@ -75,8 +75,7 @@
     </div>
     <div v-else class="product-price" style="height:24px;"></div>
     <div v-if="product.productVariants[0].canOrder" class="product-cart-qty">
-        <button class="btn btn-secondary cart-icon" v-on:click="addToCartBigButton(product,$event)"
-            :id="'but-'+product.id">
+        <button class="btn btn-secondary cart-icon" v-on:click="addToCartBigButton(product,$event)" :id="'but-' + this.uniqueKey + '-' + product.id" :class="totalProductQuantity > 0 ? 'added' : ''">
             <span class="add-to-cart">
                 <span class="cart-item-circle d-none">{{this.totalProductQuantity}}</span>
                 <span class="text-wrap"><span class="s-plus small"></span>##AddtoCart##</span>

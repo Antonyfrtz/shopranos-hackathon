@@ -1,0 +1,67 @@
+<section v-if="this.banners && this.banners.length > 0"
+    :class="['banner-carousel', fullWidth ? 'container-fluid' : 'container']" :id="'comp-'+this.model.id">
+
+    <!-- Header Section -->
+    <div v-if="model.header"
+        :class="['d-flex', 'flex-wrap', 'mb-4', 'pb-3', 'header-wrap', getAlignmentClass(model.alignment)]">
+        <h2 class="h3 fw-bold text-primary mb-0">{{ model.header }}</h2>
+        <p v-if="model.subHeader" class="text-muted">{{ model.subHeader }}</p>
+    </div>
+
+    <!-- Carousel Wrapper -->
+    <div class="banners-wrap" :class="fullWidth ? 'row' : 'boxed'">
+        <div class="swiper" :class="'banners-carousel-'+model.id">
+            <div class="swiper-wrapper" :class="[getClassNameByColumns(), getBannerHeight()]">
+
+                <!-- Carousel Slide -->
+                <div v-for="(banner, index) in banners" :key="index"
+                    class="single-banner swiper-slide position-relative">
+
+                    <!-- Background Image or Color -->
+                    <span v-if="banner.backgroundImage" class="bg-overlay"
+                        :style="'background-image: url('+banner.backgroundImage.link+'); background-size: cover; background-position: center'">
+                    </span>
+                    <span v-else-if="banner.backgroundColor" class="bg-overlay"
+                        :style="'background:' + banner.backgroundColor">
+                    </span>
+
+                    <!-- Travel Destination Content -->
+                    <div class="d-flex align-items-center h-100 text-light px-5">
+                        <div class="text-wrap" :class="[
+                                 'col-md-7', 'p-4', 'rounded-3', 'bg-dark', 'bg-opacity-50',
+                                 getBannerAlignmentElement(banner.textOrientation)
+                             ]">
+                            <p v-if="banner.tagline" class="banner-tagline fs-6 mb-2"
+                                :style="'color:' + banner.textColor">{{ banner.tagline }}</p>
+                            <h3 v-if="banner.header" class="banner-header fs-4 fw-bold mb-3"
+                                :style="'color:' + banner.textColor">{{ banner.header }}</h3>
+                            <p v-if="banner.subHeader" class="banner-subHeader fs-5"
+                                :style="'color:' + banner.textColor">{{ banner.subHeader }}</p>
+
+                            <!-- Package Highlights and Button -->
+                            <ul v-if="banner.highlights" class="list-unstyled fs-sm">
+                                <li v-for="highlight in banner.highlights" :key="highlight" class="mb-1">
+                                    <i class="bi bi-check-circle text-success"></i> {{ highlight }}
+                                </li>
+                            </ul>
+                            <div v-if="banner.buttonText" class="mt-3">
+                                <a class="btn btn-warning btn-sm rounded" :href="banner.buttonLink">{{ banner.buttonText
+                                    }}</a>
+                            </div>
+                        </div>
+
+                        <!-- Optional Image -->
+                        <div v-if="banner.image" class="img-wrap col-md-5 ms-auto d-none d-md-block">
+                            <img class="d-block rounded" :src="banner.image.link" :alt="banner.image.alt">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination and Navigation -->
+            <div class="swiper-pagination" :class="'swiper-pagination-' + model.id"></div>
+            <div class="swiper-button-next" :class="'swiper-button-next-' + model.id"></div>
+            <div class="swiper-button-prev" :class="'swiper-button-prev-' + model.id"></div>
+        </div>
+    </div>
+</section>
