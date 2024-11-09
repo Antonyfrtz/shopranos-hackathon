@@ -1,0 +1,95 @@
+  /* Featured CSS */
+  
+  .features-features {
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding-top: var(--dl-space-space-threeunits);
+    padding-left: var(--dl-space-space-fiveunits);
+    padding-right: var(--dl-space-space-fiveunits);
+    flex-direction: row;
+    padding-bottom: var(--dl-space-space-threeunits);
+    justify-content: center;
+    background-color: #397B53;
+}
+
+.features-content {
+    gap: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 1440px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.feature-feature {
+    gap: var(--dl-space-space-unit);
+    width: 100%;
+    display: flex;
+    position: relative;
+    max-width: 300px;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.feature-heading {
+    gap: var(--dl-space-space-unit);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.feature-icon {
+    height: 22px;
+    object-fit: cover;
+}
+
+.feature-header {
+    color: #ffffff;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    font-family: Karla;
+}
+
+.feature-description {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: Karla;
+    line-height: 27px;
+}
+
+/* Hide the hr by default */
+.feature-divider {
+  display: none;
+}
+
+/* Show the hr only on screens smaller than 766px */
+@media (max-width: 766px) {
+  .feature-divider {
+      display: block;
+      width: 100%;
+      margin: 10px auto;
+      border: none;
+      border-top: 1px solid #ccc;
+  }
+}
+
+@media (max-width: 991px) {
+    .features-content {
+        gap: var(--dl-space-space-fourunits);
+    }
+}
+
+@media (max-width: 767px) {
+    .features-features {
+        padding-left: var(--dl-space-space-oneandhalfunits);
+        padding-right: var(--dl-space-space-oneandhalfunits);
+    }
+    .features-content {
+        gap: var(--dl-space-space-threeunits);
+        flex-direction: column;
+    }
+}

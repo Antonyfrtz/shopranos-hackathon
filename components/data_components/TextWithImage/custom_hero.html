@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="{{Assets}}/css/hero.css">
+<section>
+    <div id="app">
+        <div class="hero-main">
+            <div class="hero-video1" style="background-image: url('https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/4d203285-f2ce-44c6-a5f2-da7f30b58c45/4d203285-f2ce-44c6-a5f2-da7f30b58c45');">
+                <video :src="videoSrc" poster="https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/4d203285-f2ce-44c6-a5f2-da7f30b58c45/4d203285-f2ce-44c6-a5f2-da7f30b58c45" class="hero-video2"></video>
+                <div class="hero-tint"></div>
+            </div>
+
+            <div class="hero-content">
+                <header class="hero-header1">
+                    <header class="hero-navbar">
+                        <!--
+                        <img :alt="logoAlt" :src="logoSrc" class="hero-logo1" />
+                        <div class="hero-menu">
+                            <div class="hero-links">
+                                <a href="#features">
+                                    <div class="hero-fragment12">
+                                        <span class="hero-text21 link">Features</span>
+                                    </div>
+                                </a>
+                                <span>
+                                    <div class="hero-fragment13">
+                                        <span class="hero-text22 link">How it works</span>
+                                    </div>
+                                </span>
+                                <span>
+                                    <div class="hero-fragment14">
+                                        <span class="hero-text23 link">Prices</span>
+                                    </div>
+                                </span>
+                                <a href="#find">
+                                    <div class="hero-fragment15">
+                                        <span class="hero-text24 link">Contact</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <button class="hero-hamburger button">
+                                <svg viewBox="0 0 1024 1024" class="hero-icon10">
+                                    <path
+                                      d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        -->
+                    </header>
+                </header>
+                <div class="hero-center">
+                    <div class="hero-heading">
+                        <h1 class="hero-header2">
+                            <div class="hero-fragment10">
+                                <span class="hero-text19">See the world like a local</span>
+                            </div>
+                        </h1>
+                        <p class="hero-caption">
+                            <div class="hero-fragment11">
+                                <span class="hero-text20">Find a local guide consectetur adipiscing elit, sed do eiusmod tempor incididunt.</span>
+                            </div>
+                        </p>
+                    </div>
+
+                    <div class="hero-border">
+                        <div class="hero-filter">
+                            <img :alt="imageAlt" :src="imageSrc" class="hero-image" />
+                            <input type="text" ref="locInput" v-model="selectedLocOption" @focus="toggleDropdown('location')" @blur="locDropdownOpen = false" :placeholder="textinputPlaceholder" class="hero-textinput1 input" />
+                            <input type="date" ref="dateInput" :placeholder="textinputPlaceholder1" class="hero-textinput2 input" />
+                    
+                            <!-- Dropdown Button and Card -->
+                            <div class="dropdown hero-textinput3">
+                                <button @click="toggleDropdown" ref="dropdownButton" class="dropdown-button">{{ dropdownButtonText || 'Group Size' }}
+                                    <span class="dropdown-icon">
+                                        <!-- Adjust SVG or icon to match the design -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20px">
+                                          <path d="M19.268 8.913a.9.9 0 0 1-.266.642l-6.057 6.057A1.3 1.3 0 0 1 12 16c-.35.008-.69-.123-.945-.364L4.998 9.58a.91.91 0 0 1 0-1.284.897.897 0 0 1 1.284 0L12 13.99l5.718-5.718a.897.897 0 0 1 1.284 0 .88.88 0 0 1 .266.642"></path>
+                                        </svg>
+                                      </span>
+                                </button>
+                            </div>
+                    
+                            <div class="hero-search">
+                                <img :alt="iconAlt" :src="iconSrc" class="hero-icon20" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Card positioned below the hero-border but above hero-content -->
+                    <div v-if="locDropdownOpen" :style="dropdownStyles" class="dropdown-card loc">
+                        <div class="dropdown-item" v-for="(option, index) in locOptions" :key="index" @mousedown="selectOption(option)">
+                            {{ option }}
+                        </div>
+                    </div>
+                    
+                    <div v-if="dropdownOpen" ref="dropdownCard" :style="dropdownStyles" class="dropdown-card">
+                        <div v-for="(option, index) in options" :key="index" class="dropdown-item">
+                            <div class="person-profile">
+                                <div class="profile-description">
+                                    <p class="notranslate profile-type">{{ option.type }}</p>
+                                    <p class="profile-text">{{ option.ageRange }}</p>
+                                </div>
+                                <div class="numberPicker__CoreNumberPicker-sc">
+                                    <button class="action-handle" @click="decrementValue(index)" aria-label="Decrease value">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="16" cy="16" r="16" fill="#fdf3d7"></circle>
+                                            <line x1="24" y1="15.5" x2="9" y2="15.5" stroke="#f6b70b"></line>
+                                        </svg>
+                                    </button>
+                                    <p class="value">{{ option.value }}</p>
+                                    <button class="action-handle" @click="incrementValue(index)" aria-label="Increase value">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="16" cy="16" r="16" fill="#fdf3d7"></circle>
+                                            <line x1="16.5" y1="23" x2="16.5" y2="8" stroke="#f6b70b"></line>
+                                            <line x1="24" y1="15.5" x2="9" y2="15.5" stroke="#f6b70b"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="custom_hero.js"></script>
+</section>
