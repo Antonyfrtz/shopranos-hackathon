@@ -1,17 +1,20 @@
 <link rel="stylesheet" href="{{Assets}}/css/product_offer.css">
 <div class="offer-container">
-    <a :href="'/product/' + product.alias" class="offer-link">
         <div class="offer-content">
-            <img
-                alt="Product"
-                :src="this._getMediaItem(product.mediaItems) || this._getNoImageUrl()"
-                @error="handleImageError"
-                class="offer-image"
-            />
+            <a :href="'/product/' + product.alias" class="offer-link">
+                <img
+                    alt="Product"
+                    :src="this._getMediaItem(product.mediaItems) || this._getNoImageUrl()"
+                    @error="handleImageError"
+                    class="offer-image"
+                />
+            </a>
             <div class="offer-details">
-                <span class="offer-location">
-                    {{ product.productVariants[0]?.title || product.title }}
-                </span>
+                <a :href="'/product/' + product.alias" class="offer-link">
+                    <span class="offer-location">
+                        {{ product.productVariants[0]?.title || product.title }}
+                    </span>
+                </a>
                 <!--
                 <span v-if="product.productVariants.length > 0 && product.productVariants[0].sku" class="offer-sku">
                     SKU: {{ product.productVariants[0].sku }}
@@ -22,5 +25,4 @@
                 <addtocart :model="product" :quantityActive="false" :isCalculated="isCalculated"></addtocart>
             </div>
         </div>
-    </a>
 </div>

@@ -244,3 +244,7 @@
   .filterlist-single_product div.offer-container div.offer-content img.offer-image{
     height: 15vh !important;
   }
+
+  .product-cart{
+    margin-top: auto;
+  }
