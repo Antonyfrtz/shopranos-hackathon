@@ -44,6 +44,11 @@
     border-radius: 4px;
     background-color: var(--dl-color-gray-white);
   }
+  .btn:disabled {
+    background-color: #cccccc !important;
+    color: #666666;
+    cursor: not-allowed;
+}
   .input {
     color: var(--dl-color-gray-black);
     cursor: auto;
@@ -230,4 +235,12 @@
       padding-top: var(--dl-space-space-oneandhalfunits);
       padding-bottom: var(--dl-space-space-oneandhalfunits);
     }
+  }
+
+  .filterlist-single_product div.offer-container{
+    height: 37vh !important;
+  }
+
+  .filterlist-single_product div.offer-container div.offer-content img.offer-image{
+    height: 15vh !important;
   }

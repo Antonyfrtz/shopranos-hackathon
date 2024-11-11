@@ -12,9 +12,11 @@
                 <span class="offer-location">
                     {{ product.productVariants[0]?.title || product.title }}
                 </span>
+                <!--
                 <span v-if="product.productVariants.length > 0 && product.productVariants[0].sku" class="offer-sku">
                     SKU: {{ product.productVariants[0].sku }}
                 </span>
+                -->
             </div>
             <div class="product-cart">
                 <addtocart :model="product" :quantityActive="false" :isCalculated="isCalculated"></addtocart>

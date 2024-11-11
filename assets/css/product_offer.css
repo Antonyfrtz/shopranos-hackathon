@@ -1,5 +1,6 @@
 .offer-container {
     width: 100%;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -23,6 +24,7 @@
   
   .offer-image {
     width: 100%;
+    height: 35vh;
     object-fit: cover;
   }
   
@@ -40,9 +42,17 @@
   }
   
   .offer-location {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 2.4em; /* Adjusted for 20px font size */
+    line-height: 1.2em; /* Tighter spacing with bold font */
     font-size: 20px;
     font-weight: 700;
-  }
+}
   
   .offer-sku {
     font-size: 16px;
