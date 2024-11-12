@@ -1820,22 +1820,24 @@ app.config.globalProperties._getFooterMenu = (callback) => {
 };
 
 app.config.globalProperties._getHeaderMenu = (callback) => {
-    if (_cache_main_menu != null) {
-        callback(_cache_main_menu);
-        return;
-    }
+    // if (_cache_main_menu != null) {
+    //     callback(_cache_main_menu);
+    //     return;
+    // }
     var lang = app.config.globalProperties._getCulture();
 
-    var data = localStorage.getItem(`${updateInfoData.companyId}-header-menu-${lang}`);
+    var data;
     if (data == null) {
-        axios({
-            method: 'GET',
-            url: `/api/menus/Main`
-        }).then(response => {
-            _cache_main_menu = response.data;
-            localStorage.setItem(`${updateInfoData.companyId}-header-menu-${lang}`, JSON.stringify(_cache_main_menu));
-            callback(_cache_main_menu);
-        });
+        fetch("https://zcontentecom.blob.core.windows.net/themes/40b62232-78b3-452f-b802-188248e67873/staging/Assets/navbar_payload.json")
+            .then(response => response.json())
+            .then(jsonData => {
+                _cache_main_menu = jsonData;
+                localStorage.setItem(`${updateInfoData.companyId}-header-menu-${lang}`, JSON.stringify(_cache_main_menu));
+                callback(_cache_main_menu);
+            })
+            .catch(error => {
+                console.error("Error fetching navbar payload:", error);
+            });
         return;
     }
     _cache_main_menu = JSON.parse(data);

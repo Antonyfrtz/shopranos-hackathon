@@ -1,0 +1,374 @@
+[
+    {
+      "navigationTitle": "Home",
+      "navigationType": "Page",
+      "relativeId": "ac0c7bf2-c79d-4741-bef4-27a782847439",
+      "url": "/home",
+      "image": null,
+      "navigations": [],
+      "translation": null,
+      "isMegaMenu": null,
+      "menuIcon": null,
+      "banners": []
+    },
+  {
+      "navigationTitle": "Προορισμοί",
+      "navigationType": "Categories",
+      "relativeId": null,
+      "url": "/categories",
+      "image": null,
+      "navigations": [
+        {
+          "navigationTitle": "Ευρώπη",
+          "navigationType": "Category",
+          "relativeId": "80c3595c-5d22-4730-95cd-1952bb53f443",
+          "url": "/category/europe",
+          "image": {
+            "id": "1b21100d-495c-460f-9c34-f65b85e84e29",
+            "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/e8a66296-cf81-45b8-9c27-7ac31040eb76/e8a66296-cf81-45b8-9c27-7ac31040eb76?1731370843.7719045",
+            "position": null,
+            "alt": null,
+            "mediaType": null,
+            "width": null,
+            "height": null
+          },
+          "navigations": [
+            {
+              "navigationTitle": "Σλοβενία",
+              "navigationType": "Category",
+              "relativeId": "f60abd35-26b4-4dca-81fb-2c94ef11bf8f",
+              "url": "/category/slovenia",
+              "image": {
+                "id": "49522e0b-3a57-4c66-bdc6-47f91f42452d",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/6a59cb7d-fec9-4fd6-a389-7a69f673f8ad/6a59cb7d-fec9-4fd6-a389-7a69f673f8ad?1731157254.3979049",
+                "position": null,
+                "alt": null,
+                "mediaType": null,
+                "width": null,
+                "height": null
+              },
+              "navigations": [],
+              "translation": null,
+              "isMegaMenu": false,
+              "menuIcon": null,
+              "banners": null
+            },
+            {
+              "navigationTitle": "Ισπανία",
+              "navigationType": "Category",
+              "relativeId": "1b528e91-30e7-4865-8afa-52eb96961924",
+              "url": "/category/ispania",
+              "image": {
+                "id": "662223b6-d682-4bdd-852a-581a5f96d3cf",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/88e94b59-3826-48e2-bcef-937e2cb359dc/88e94b59-3826-48e2-bcef-937e2cb359dc?1731163143.2563796",
+                "position": null,
+                "alt": null,
+                "mediaType": null,
+                "width": null,
+                "height": null
+              },
+              "navigations": [],
+              "translation": null,
+              "isMegaMenu": false,
+              "menuIcon": null,
+              "banners": null
+            },
+            {
+              "navigationTitle": "Ελλάδα",
+              "navigationType": "Category",
+              "relativeId": "3aa5d0f1-7f11-4c6c-99ab-41308cb7b66b",
+              "url": "/category/ellada",
+              "image": {
+                "id": "e8df5e66-59bd-4175-acce-223a084712dc",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/7b4bf4b9-40fd-4a23-ae12-aec5cf04237e/7b4bf4b9-40fd-4a23-ae12-aec5cf04237e?1731163262.6306112",
+                "position": null,
+                "alt": null,
+                "mediaType": null,
+                "width": null,
+                "height": null
+              },
+              "navigations": [],
+              "translation": null,
+              "isMegaMenu": false,
+              "menuIcon": null,
+              "banners": null
+            }
+          ],
+          "translation": null,
+          "isMegaMenu": false,
+          "menuIcon": null,
+          "banners": null
+        },
+        {
+          "navigationTitle": "Ασία",
+          "navigationType": "Category",
+          "relativeId": "c3f4b0d1-1531-410b-8451-33c0722375a4",
+          "url": "/category/asia",
+          "image": {
+            "id": "75628a19-88b2-4558-8c30-e30a3a5ef8a7",
+            "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/c631b0f7-c81d-4dd8-854f-c9ab1aadf972/c631b0f7-c81d-4dd8-854f-c9ab1aadf972?1731370970.956056",
+            "position": null,
+            "alt": null,
+            "mediaType": null,
+            "width": null,
+            "height": null
+          },
+          "navigations": [
+            {
+              "navigationTitle": "Κατάρ",
+              "navigationType": "Category",
+              "relativeId": "16e8a3ca-dae7-4741-89ca-60d076fa5476",
+              "url": "/category/katar",
+              "image": {
+                "id": "1c27e4da-b4dc-4e81-b0a1-a35a966906a6",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/1b736e13-59d0-47d5-902e-d9fe9780db16/1b736e13-59d0-47d5-902e-d9fe9780db16?1731163836.796556",
+                "position": null,
+                "alt": null,
+                "mediaType": null,
+                "width": null,
+                "height": null
+              },
+              "navigations": [
+                {
+                  "navigationTitle": "Νέα Υόρκη, NY, USA",
+                  "navigationType": "Category",
+                  "relativeId": "ad2b0c9b-cd1a-4588-ad07-a3b7aef45944",
+                  "url": "/category/nea-yorki-ny-usa",
+                  "image": {
+                    "id": "07ebef74-f202-43c5-ab92-434f26962687",
+                    "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/5bac0b4e-bf68-4236-9d44-e8c2a96a42a1/5bac0b4e-bf68-4236-9d44-e8c2a96a42a1?1731371904.1839502",
+                    "position": null,
+                    "alt": null,
+                    "mediaType": null,
+                    "width": null,
+                    "height": null
+                  },
+                  "navigations": [],
+                  "translation": null,
+                  "isMegaMenu": false,
+                  "menuIcon": null,
+                  "banners": null
+                }
+              ],
+              "translation": null,
+              "isMegaMenu": false,
+              "menuIcon": null,
+              "banners": null
+            }
+          ],
+          "translation": null,
+          "isMegaMenu": false,
+          "menuIcon": null,
+          "banners": null
+        },
+        {
+          "navigationTitle": "Βόρεια Αμερική",
+          "navigationType": "Category",
+          "relativeId": "be238de7-84cf-4447-952f-463ef1148385",
+          "url": "/category/voreia-ameriki",
+          "image": {
+            "id": "0e3826a2-efed-477f-be0d-f8a3a0b8c9e9",
+            "link": null,
+            "position": null,
+            "alt": null,
+            "mediaType": null,
+            "width": null,
+            "height": null
+          },
+          "navigations": [],
+          "translation": null,
+          "isMegaMenu": false,
+          "menuIcon": null,
+          "banners": null
+        }
+      ],
+      "translation": null,
+      "isMegaMenu": false,
+      "menuIcon": null,
+      "banners": [
+        {
+          "title": "New Banner 1",
+          "image": {
+            "id": "a39b6c05-4764-45b0-b936-6a33d2b2007d",
+            "link": "https://shopranos-media.azureedge.net/media/40b62232-78b3-452f-b802-188248e67873/8efeeb78-8ce6-4099-a603-50aa9a2e9715/8efeeb78-8ce6-4099-a603-50aa9a2e9715",
+            "position": null,
+            "alt": null,
+            "mediaType": null,
+            "width": null,
+            "height": null
+          },
+          "link": "",
+          "buttonText": ""
+        }
+      ]
+    },
+        {
+          "navigationTitle": "Είδη Ταξιδιού",
+          "navigationType": "Brands",
+          "relativeId": null,
+          "url": "/brands",
+          "image": null,
+          "navigations": [
+            {
+              "navigationTitle": "New Balance",
+              "navigationType": "Brand",
+              "relativeId": "352e6fde-81d3-4352-a942-7f5337f58087",
+              "url": "/brand/new-balance",
+              "image": {
+                "id": "1e176db2-e0e9-44d0-897f-6f09ed4d19bc",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/811805d3-7fff-4634-be36-07e0d5a22827/811805d3-7fff-4634-be36-07e0d5a22827?1730136447.272833",
+                "position": null,
+                "alt": null,
+                "mediaType": null,
+                "width": null,
+                "height": null
+              },
+              "navigations": null,
+              "translation": null,
+              "isMegaMenu": null,
+              "menuIcon": null,
+              "banners": null
+            },
+            {
+              "navigationTitle": "Stradivarius",
+              "navigationType": "Brand",
+              "relativeId": "55161acd-87e5-47e4-97c9-ad47d87c63d5",
+              "url": "/brand/stradivarius",
+              "image": {
+                "id": "71a2a9be-9b81-40b5-8c0e-8ced71051cdc",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/8bd80646-101e-4dd4-b457-3d1fa69fd77c/8bd80646-101e-4dd4-b457-3d1fa69fd77c?1730136447.2740555",
+                "position": null,
+                "alt": null,
+                "mediaType": null,
+                "width": null,
+                "height": null
+              },
+              "navigations": null,
+              "translation": null,
+              "isMegaMenu": null,
+              "menuIcon": null,
+              "banners": null
+            },
+            {
+              "navigationTitle": "Mango",
+              "navigationType": "Brand",
+              "relativeId": "8810b403-35c4-4882-8385-a466970eca9b",
+              "url": "/brand/mango",
+              "image": {
+                "id": "3c9790ff-8bdc-477b-8a89-1899f67f57e2",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/c5c139a5-d62a-4ded-9c5b-4353539b205a/c5c139a5-d62a-4ded-9c5b-4353539b205a?1730136447.2722504",
+                "position": null,
+                "alt": null,
+                "mediaType": null,
+                "width": null,
+                "height": null
+              },
+              "navigations": null,
+              "translation": null,
+              "isMegaMenu": null,
+              "menuIcon": null,
+              "banners": null
+            },
+            {
+              "navigationTitle": "Nike",
+              "navigationType": "Brand",
+              "relativeId": "9f5932d5-bd58-4cda-a40e-718081322723",
+              "url": "/brand/nike",
+              "image": {
+                "id": "3d219eb6-fcef-494d-85d7-0b14e440e900",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/8d00ea39-5f9d-418f-bf3a-63c2fa503997/8d00ea39-5f9d-418f-bf3a-63c2fa503997?1730136447.273434",
+                "position": null,
+                "alt": null,
+                "mediaType": null,
+                "width": null,
+                "height": null
+              },
+              "navigations": null,
+              "translation": null,
+              "isMegaMenu": null,
+              "menuIcon": null,
+              "banners": null
+            },
+            {
+              "navigationTitle": "Asos",
+              "navigationType": "Brand",
+              "relativeId": "e012eaaa-47ad-4de2-9aca-7fa224f850ca",
+              "url": "/brand/asos",
+              "image": {
+                "id": "7317baa6-5f6a-44b7-99b9-157ebf1e0753",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/6f5041d5-d0f9-4f0e-8c3d-6ff5e1dfa158/6f5041d5-d0f9-4f0e-8c3d-6ff5e1dfa158?1730136447.2746315",
+                "position": null,
+                "alt": null,
+                "mediaType": null,
+                "width": null,
+                "height": null
+              },
+              "navigations": null,
+              "translation": null,
+              "isMegaMenu": null,
+              "menuIcon": null,
+              "banners": null
+            },
+            {
+              "navigationTitle": "Beach Tours",
+              "navigationType": "Brand",
+              "relativeId": "f5b5cd95-72c2-451c-8f05-569df8f42b98",
+              "url": "/brand/adidas",
+              "image": {
+                "id": "543d0d1e-4ec8-4574-850d-dd0cbcb66039",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/41242351-c4dc-4317-919d-6981cd6233b5/41242351-c4dc-4317-919d-6981cd6233b5?1731079446.5322833",
+                "position": null,
+                "alt": null,
+                "mediaType": null,
+                "width": null,
+                "height": null
+              },
+              "navigations": null,
+              "translation": null,
+              "isMegaMenu": null,
+              "menuIcon": null,
+              "banners": null
+            }
+          ],
+          "translation": null,
+          "isMegaMenu": false,
+          "menuIcon": null,
+          "banners": []
+        },
+        {
+          "navigationTitle": "Όλοι οι Οδηγοί",
+          "navigationType": "Collection",
+          "relativeId": "356198a7-f4c8-4ce5-ad9e-810c3baaa850",
+          "url": "/collection/products",
+          "image": null,
+          "navigations": [],
+          "translation": null,
+          "isMegaMenu": null,
+          "menuIcon": null,
+          "banners": []
+        },
+        {
+          "navigationTitle": "Blog",
+          "navigationType": "Blogs",
+          "relativeId": null,
+          "url": "/blog/posts",
+          "image": null,
+          "navigations": [],
+          "translation": null,
+          "isMegaMenu": false,
+          "menuIcon": null,
+          "banners": []
+        },
+        {
+          "navigationTitle": "Επικοινωνία",
+          "navigationType": "Link",
+          "relativeId": null,
+          "url": "/contactus",
+          "image": null,
+          "navigations": [],
+          "translation": null,
+          "isMegaMenu": null,
+          "menuIcon": null,
+          "banners": []
+        }
+  ]
