@@ -118,6 +118,18 @@ const navbarcustom_navbar = {
                 e.target.parentNode.classList.add("show");
             }
         },
+        triggerDropdown(index) {
+            this.$nextTick(() => {
+                const dropdownToggle = this.$refs.dropdownToggle[index-1];
+        
+                if (dropdownToggle && dropdownToggle instanceof HTMLElement && window.innerWidth > 1132) {
+                    // Trigger the click event programmatically
+                    dropdownToggle.click();
+                } else {
+                    console.error("dropdownToggle is not available or not a valid DOM element.");
+                }
+            });
+        },
         calculateNavigation(navItem, i) {
             let navs = [];
             let length = 0;

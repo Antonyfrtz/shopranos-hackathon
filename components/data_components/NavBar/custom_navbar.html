@@ -40,7 +40,7 @@
                         {'collapse': !fullMenu}
                     ]">
                     <ul v-if="navigations!==null && navigations.length>0" class="navbar-nav gap-4 h-100">
-                        <template v-for="navItem in navigations">
+                        <template v-for="(navItem, index) in navigations">
                             <li v-if="navItem.isMegaMenu" class="nav-item dropdown">
                                 <span v-if="checkIfClickable(navItem.url)" class="nav-link dropdown-toggle p-0" data-bs-toggle="dropdown"></span>
                                 <a :href="navItem.url" @click="navigation(navItem)" :class="{'active' : checkIfCurrentUrl(navItem.url)}">
@@ -88,9 +88,9 @@
                                     </div>
                                 </div>
                             </li>
-                            <li v-else-if="navItem.navigations !== null && navItem.navigations.length>0"
+                            <li v-else-if="navItem.navigations !== null && navItem.navigations.length>0" @mouseenter="triggerDropdown(index)" @mouseleave="triggerDropdown(index)"
                                 class="nav-item dropdown" :class="{'active' : checkIfCurrentUrl(navItem.url)}">
-                                <span class="nav-link dropdown-toggle p-0" data-bs-toggle="dropdown" data-bs-auto-close="outside" @click="bodyClassAction($event)"></span>
+                                <span ref="dropdownToggle" class="nav-link dropdown-toggle p-0" data-bs-toggle="dropdown" data-bs-auto-close="outside" @click="bodyClassAction($event)"></span>
                                 <a :href="navItem.url" @click="navigation(navItem)" :class="[{'active' : checkIfCurrentUrl(navItem.url)}, {'disable' : !checkIfHasLink(navItem.url)}]">
                                     <img v-if="navItem.menuIcon !== null && navItem.menuIcon.link !== null" :src="navItem.menuIcon.link" width="24" height="24" :alt="navItem.menuIcon.alt" />
                                     {{navItem.navigationTitle}}

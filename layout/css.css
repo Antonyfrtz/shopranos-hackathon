@@ -248,3 +248,17 @@
   .product-cart{
     margin-top: auto;
   }
+
+  thead, tbody, .text-muted{
+    font-size: 15px;
+  }
+
+  a.active{
+    color: #397b53 !important;
+  }
+
+  .modal .modal-content .modal-header .btn-close{
+    right: 15px;
+    bottom: 2px;
+    font-size: 20px;
+  }

@@ -128,28 +128,7 @@
                 "width": null,
                 "height": null
               },
-              "navigations": [
-                {
-                  "navigationTitle": "Νέα Υόρκη, NY, USA",
-                  "navigationType": "Category",
-                  "relativeId": "ad2b0c9b-cd1a-4588-ad07-a3b7aef45944",
-                  "url": "/category/nea-yorki-ny-usa",
-                  "image": {
-                    "id": "07ebef74-f202-43c5-ab92-434f26962687",
-                    "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/5bac0b4e-bf68-4236-9d44-e8c2a96a42a1/5bac0b4e-bf68-4236-9d44-e8c2a96a42a1?1731371904.1839502",
-                    "position": null,
-                    "alt": null,
-                    "mediaType": null,
-                    "width": null,
-                    "height": null
-                  },
-                  "navigations": [],
-                  "translation": null,
-                  "isMegaMenu": false,
-                  "menuIcon": null,
-                  "banners": null
-                }
-              ],
+              "navigations": [],
               "translation": null,
               "isMegaMenu": false,
               "menuIcon": null,
@@ -175,7 +154,28 @@
             "width": null,
             "height": null
           },
-          "navigations": [],
+          "navigations": [
+            {
+              "navigationTitle": "Νέα Υόρκη, NY, USA",
+              "navigationType": "Category",
+              "relativeId": "ad2b0c9b-cd1a-4588-ad07-a3b7aef45944",
+              "url": "/category/nea-yorki-ny-usa",
+              "image": {
+                "id": "07ebef74-f202-43c5-ab92-434f26962687",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/5bac0b4e-bf68-4236-9d44-e8c2a96a42a1/5bac0b4e-bf68-4236-9d44-e8c2a96a42a1?1731371904.1839502",
+                "position": null,
+                "alt": null,
+                "mediaType": null,
+                "width": null,
+                "height": null
+              },
+              "navigations": [],
+              "translation": null,
+              "isMegaMenu": false,
+              "menuIcon": null,
+              "banners": null
+            }
+          ],
           "translation": null,
           "isMegaMenu": false,
           "menuIcon": null,
