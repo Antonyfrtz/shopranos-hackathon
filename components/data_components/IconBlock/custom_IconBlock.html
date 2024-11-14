@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="{{Assets}}/css/custom_IconBlock.css">
+
+<section id="find" class="find-find1">
+    <div class="find-heading">
+      <h2 class="find-header">
+        <slot name="header">
+          <!--Default content for header-->
+          <div class="find-fragment1">
+            <span class="find-text2">Find a local guide now</span>
+          </div>
+        </slot>
+      </h2>
+      <p class="find-caption">
+        <slot name="caption">
+          <!--Default content for caption-->
+          <div class="find-fragment2">
+            <span class="find-text3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam.
+            </span>
+          </div>
+        </slot>
+      </p>
+    </div>
+    <button class="find-find2 button">
+      <span>
+        <slot name="find">
+          <!--Default content for find-->
+          <div class="find-fragment3">
+            <span class="find-text4">Find a local guide</span>
+          </div>
+        </slot>
+      </span>
+    </button>
+  </section>
+  

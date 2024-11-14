@@ -1,0 +1,76 @@
+.find-find1 {
+    gap: var(--dl-space-space-threeunits);
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding-top: var(--dl-space-space-fourunits);
+    padding-left: var(--dl-space-space-fiveunits);
+    padding-right: var(--dl-space-space-fiveunits);
+    flex-direction: column;
+    padding-bottom: var(--dl-space-space-fourunits);
+    background-color: #477E5D;
+  }
+  .find-heading {
+    gap: var(--dl-space-space-oneandhalfunits);
+    width: 100%;
+    display: flex;
+    max-width: 900px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .find-header {
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    font-style: normal;
+    text-align: center;
+    font-family: Cormorant Infant;
+    font-weight: 700;
+    line-height: 60px;
+  }
+  .find-caption {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    font-family: Karla;
+    line-height: 27px;
+  }
+  .find-find2 {
+    font-style: normal;
+    transition: 0.3s;
+    font-weight: 500;
+    padding-top: var(--dl-space-space-unit);
+    border-width: 0px;
+    padding-left: var(--dl-space-space-oneandhalfunits);
+    border-radius: 56px;
+    padding-right: var(--dl-space-space-oneandhalfunits);
+    padding-bottom: var(--dl-space-space-unit);
+    background-color: rgb(250, 216, 122);
+  }
+  .find-find2:hover {
+    opacity: 0.5;
+  }
+  .find-fragment1, .find-fragment2, .find-fragment3 {
+    display: contents;
+  }
+  .find-text2, .find-text3, .find-text4 {
+    display: inline-block;
+  }
+  @media(max-width: 767px) {
+    .find-find1 {
+      padding-left: var(--dl-space-space-oneandhalfunits);
+      padding-right: var(--dl-space-space-oneandhalfunits);
+    }
+    .find-heading {
+      gap: var(--dl-space-space-unit);
+    }
+    .find-header {
+      font-size: 32px;
+      line-height: 31px;
+    }
+    .find-caption {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }

@@ -30,6 +30,7 @@ const productsinglecustom_buythelook = {
             activeVariantId: '',
             dimension1Array: [],
             dimension2Array: [],
+            dateToDimensionMap: {},
             inputChange: '',
             masterRelatedProducts: [],
             totalProductQuantity: 0,
@@ -48,8 +49,15 @@ const productsinglecustom_buythelook = {
                     this.totalProductQuantity = this.cartData.cartItems.find((p) => p.productVariantId === this._product.productVariants[this.activeProduct].id).quantity;
             }
         });
-
-        this._product.productVariants[this.activeProduct].selectedQuantity = this.selectedQuantity
+        
+        // console.log(this._product.productVariants);
+        // console.log(this.dimension1Array);
+        // console.log(this.dimension2Array);
+        // let inStockVariant = this._product.productVariants.findIndex(v => v.quantity > 0);
+        // console.log(inStockVariant);
+        // this.activeProduct = inStockVariant >= 0 ? inStockVariant : 0;
+    
+        this._product.productVariants[this.activeProduct].selectedQuantity = this.selectedQuantity;
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const sku = urlParams.get('sku');
@@ -298,60 +306,6 @@ const productsinglecustom_buythelook = {
                     }
                 });
             })
-
-            // const alias = "asos-design-nobu-strappy-tie-leg-heeled-sandals-in-gold";
-            // const lang = this._getCulture(); // Adjust this to get the language in your Vue component
-
-            // try {
-            //     // Send the GET request with alias and extended parameters
-            //     const response = await axios.get(`/api/extended/${alias}`, {
-            //         params: {
-            //             lang: lang,
-            //             extend: "StockAvailability,AttributesInProduct,IcoTags,Dimensions"
-            //         }
-            //     });
-                
-            //     // Check for a valid product response
-            //     if (!response.data) {
-            //         throw new Error("Product not found");
-            //     }
-
-            //     // Track or process product data if needed
-            //     console.log("Product Data:", response.data);
-
-            //     return response.data; // Return or use product data as needed
-            // } catch (error) {
-            //     if (error.response && error.response.status === 404) {
-            //         console.error("Product not found");
-            //     } else {
-            //         console.error("Error fetching product details:", error.message);
-            //     }
-            // }
-
-
-            // let criteria = {
-            //     page: 1,
-            //     pageSize: 1,
-            //     sort: '-SortDate',
-            //     search: "ASOS DESIGN Nobu",
-            // };
-            // this._findProductsByCriteria(criteria, data => {
-            //     this.bundleProduct = data[0];
-            //     console.log("bundleProduct: ", this.bundleProduct);
-            
-            //     // if (this.checkVariantProduct(false, this.bundleProduct)) {
-            //     //     this.setVariants(this.bundleProduct, '.bundle-product-variants');
-            //     //     this.bundleProduct.productVariants.forEach(variant => {
-            //     //         if (variant.retail !== null && variant.retail.salesUnitId != null) {
-            //     //             this._findUnitsByIds([variant.retail.salesUnitId, this.productData.variant.unitId], units => {
-            //     //                 variant.retail.unit = units.find(u => u.id == variant.retail.salesUnitId)?.name;
-            //     //                 var unit = units.find(u => u.id == variant.retail.unitId);
-            //     //                 variant.retail.unitPriceWithDescr = `${this.calculateCurrency(variant.retail.unitPrice)} / ${unit?.name}`;
-            //     //             })
-            //     //         }
-            //     //     });
-            //     // }
-            // })
         },
         getActiveImage(mediaItemId) {
             var slidePosition = 1;
@@ -542,9 +496,7 @@ const productsinglecustom_buythelook = {
             return true;
         },
         setActiveProduct(currDimensionItemId) {
-
             var flagChecked = false;
-
             if (this.dimension1Array.includes(currDimensionItemId)) {
 
                 if (document.getElementById(currDimensionItemId) !== null) {
@@ -552,13 +504,13 @@ const productsinglecustom_buythelook = {
 
                     if (this.dimension2Array.length > 0) {
                         this.productData.productVariants.forEach(variant => {
-                            if (variant.canOrder) {
+                            if (!variant.canOrder) {
                                 var dimensionItemId2 = variant.dimension2ItemId;
                                 document.getElementById(dimensionItemId2).disabled = "disabled";
                             }
                         });
                         this.productData.productVariants.forEach(variant => {
-                            if (variant.canOrder) {
+                            if (variant.canOrder && variant.quantity > 0) {
                                 var dimensionItemId2 = variant.dimension2ItemId;
                                 if (variant.dimension1ItemId === currDimensionItemId) {
                                     if (!flagChecked) {
@@ -584,7 +536,8 @@ const productsinglecustom_buythelook = {
                         if (document.querySelector('.attribute:first-child input:checked') !== null) {
                             var dimensionItemId1 = document.querySelector('.attribute:first-child input:checked').id;
                             this.activeProduct = this.productData.productVariants.findIndex(e => (e.dimension2ItemId === currDimensionItemId) && (e.dimension1ItemId === dimensionItemId1));
-                        } else {
+                        } 
+                        else {
                             this.activeProduct = 0;
                         }
 
@@ -621,45 +574,68 @@ const productsinglecustom_buythelook = {
             var uniqueDims2 = [];
             
             if (data.dimension1 !== null && this.productData.variant.dimension1ItemId) {
-                str += `<div class="attribute ${this.getVariantCode(data.dimension1.type)}">
-                    <p class="variantName">${data.dimension1.name}</p>
-                    <div class="variantValues">`;
-
-                data.dimension1.items.forEach(dimensionItem => {
-                    data.productVariants.forEach(variant => {
-                        if ((variant.dimension1ItemId == dimensionItem.id) && !uniqueDims1.includes(dimensionItem.id)) {
-                            uniqueDims1.push(dimensionItem.id);
-                            if (!this.dimension1Array.includes(dimensionItem.id)) {
-                                this.dimension1Array.push(dimensionItem.id);
+                if(data.dimension1.name === "Ημερομηνία"){
+                    // Display the calendar input for the Ημερομηνία dimension
+                    str += `<div class="attribute calendar">
+                        <p class="variantName">${data.dimension1.name}</p>
+                        <input type="date" id="dateInput" class='p-3' placeholder="Select date">
+                    </div>
+                    `;
+                    data.dimension1.items.forEach(dimensionItem => {
+                        // Map the date to the corresponding dimensionItem.id
+                        this.dateToDimensionMap[dimensionItem.value] = dimensionItem.id;
+                        data.productVariants.forEach(variant => {
+                            if ((variant.dimension1ItemId == dimensionItem.id) && !uniqueDims1.includes(dimensionItem.id)) {
+                                uniqueDims1.push(dimensionItem.id);
+                                if (!this.dimension1Array.includes(dimensionItem.id)) {
+                                    this.dimension1Array.push(dimensionItem.id);
+                                }
+                                str += `<input type="radio" name="${data.dimension1.name}" id="${dimensionItem.id}" hidden>`;
                             }
-
-                            str += `<div class="variantValue">
-                                <input type="radio" name="${data.dimension1.name}" id="${dimensionItem.id}">
-                                <label for="${dimensionItem.value}">`;
-
-                            if (data.dimension1.name === 'Color') {
-                                str += `<span style="--bgColor:${dimensionItem.textColor}">
-                                        <span>${dimensionItem.value}</span>
-                                    </span>`;
-                            } else {
-                                str += `<span>${dimensionItem.value}</span>`;
-                            }
-
-                            str += `</label>
-                            </div>`;
-                        }
+                        });
                     });
-                });
+                }
+                else{
+                    str += `<div class="attribute ${this.getVariantCode(data.dimension1.type)}">
+                        <p class="variantName">${data.dimension1.name}</p>
+                        <div class="variantValues p-3">`;
 
-                str += `</div>
-                </div>`;
+                    data.dimension1.items.forEach(dimensionItem => {
+                        data.productVariants.forEach(variant => {
+                            if ((variant.dimension1ItemId == dimensionItem.id) && !uniqueDims1.includes(dimensionItem.id)) {
+                                uniqueDims1.push(dimensionItem.id);
+                                if (!this.dimension1Array.includes(dimensionItem.id)) {
+                                    this.dimension1Array.push(dimensionItem.id);
+                                }
+
+                                str += `<div class="variantValue">
+                                    <input type="radio" name="${data.dimension1.name}" id="${dimensionItem.id}">
+                                    <label for="${dimensionItem.value}">`;
+
+                                if (data.dimension1.name === 'Color') {
+                                    str += `<span style="--bgColor:${dimensionItem.textColor}">
+                                            <span>${dimensionItem.value}</span>
+                                        </span>`;
+                                } else {
+                                    str += `<span>${dimensionItem.value}</span>`;
+                                }
+
+                                str += `</label>
+                                </div>`;
+                            }
+                        });
+                    });
+
+                    str += `</div>
+                    </div>`;
+                }
             }
 
             if (data.dimension2 !== null && this.productData.variant.dimension2ItemId) {
 
                 str += `<div class="attribute ${this.getVariantCode(data.dimension2.type)}">
                     <p class="variantName">${data.dimension2.name}</p>
-                    <div class="variantValues">`;
+                    <div class="variantValues p-3">`;
 
                 data.dimension2.items.forEach(dimensionItem => {
                     data.productVariants.forEach(variant => {
@@ -693,6 +669,26 @@ const productsinglecustom_buythelook = {
             }
 
             document.querySelector(classes).innerHTML = str;
+
+            const specificDates = data.dimension1.items.map(item => String(item.value));
+            // Initialize Flatpickr
+            flatpickr("#dateInput", {
+                enable: specificDates.map(date => {
+                    const [day, month, year] = date.split("-");
+                    // Convert to yyyy-mm-dd format for JavaScript Date object
+                    return new Date(year+"-"+month+"-"+day);
+                }),
+                dateFormat: "d/m/Y",
+                onChange: (selectedDates) => {
+                    if (selectedDates.length > 0) {
+                        // Get the selected date in dd/mm/yyyy format
+                        const selectedDate = selectedDates[0].toLocaleDateString("en-GB").replace(/\//g, "-");
+                        const dimensionItemId = this.dateToDimensionMap[selectedDate];
+                        // Now activate the corresponding variant based on the selected date
+                        this.setActiveProduct(dimensionItemId);
+                    }
+                }
+            });
 
             uniqueDims1.every((dim, index) => {
                 if (data.productVariants.find(el => el.dimension1ItemId === dim).canOrder) {
