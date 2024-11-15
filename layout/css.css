@@ -350,3 +350,7 @@
     border-radius: 12px;
     border-color: white;
   }
+
+  .variantValue input:focus{
+    color:rgb(250, 216, 122) !important;
+  }
