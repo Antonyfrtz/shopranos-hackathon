@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{Assets}}/css/custom_carousel.css">
 <section v-if="this.banners && this.banners.length > 0"
     :class="['banner-carousel', fullWidth ? 'container-fluid' : 'container']" :id="'comp-'+this.model.id">
 
@@ -27,7 +28,7 @@
 
                     <!-- Travel Destination Content -->
                     <div class="d-flex align-items-center h-100 text-light px-5">
-                        <div class="text-wrap" :class="[
+                        <div class="text-wrap" style="margin-left: 100px !important;" :class="[
                                  'col-md-7', 'p-4', 'rounded-3', 'bg-dark', 'bg-opacity-50',
                                  getBannerAlignmentElement(banner.textOrientation)
                              ]">
@@ -60,8 +61,12 @@
 
             <!-- Pagination and Navigation -->
             <div class="swiper-pagination" :class="'swiper-pagination-' + model.id"></div>
-            <div class="swiper-button-next" :class="'swiper-button-next-' + model.id"></div>
-            <div class="swiper-button-prev" :class="'swiper-button-prev-' + model.id"></div>
+            <div class="swiper-button-next custom-next" :class="'swiper-button-next-' + model.id">
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="swiper-button-prev custom-prev" :class="'swiper-button-prev-' + model.id">
+                <i class="bi bi-chevron-left"></i>
+            </div>
         </div>
     </div>
 </section>

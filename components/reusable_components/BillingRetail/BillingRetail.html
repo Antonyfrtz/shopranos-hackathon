@@ -1,6 +1,7 @@
+<link rel="stylesheet" href="{{Assets}}/css/custom_billing.css">
 <div class="billing-wrap">
     <h4 class="h5 fw-bold mb-3 py-3 border-bottom head__title">##Billing##</h4>
-    <div class="border mb-3" id="billingAddress-method">
+    <div class="" id="billingAddress-method">
         <!-- User Billing Address Options -->
         <template v-if="userisauthenticated && useraddresses !== null">
             <div v-for="(useraddress, index) in useraddresses" class="billingAddress-option py-2 px-3">
@@ -176,85 +177,86 @@
                     </div>
                 </div>
 
+                <!-- Invoice Details -->
+                <div>
+                    <input type="checkbox" name="invoiceGroup" id="radioInvoice" value="invoice" class="me-2 ignoreInput"
+                        v-model="invoiceType" @input="toggleInvoiceDetails" />
+                    <label class="pb-3" :for="'radioInvoice'">##Invoice##</label>
+                </div>
+                <div v-if="isInvoice" class="invoice-wrap">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label for="checkoutBillingCompanyName" class="form-label">##CompanyName##</label><span
+                                    class="text-danger ps-1">*</span>
+                                <input type="text" name="checkoutBillingCompanyName" id="checkoutBillingCompanyName"
+                                    :class="ValidationClassCompanyName" v-model="CompanyName"
+                                    @blur="validateAndSetInvoice('CompanyName', CompanyName, false)" required>
+                                <p v-if="this.CompanyNameError === this.errorCode1" class="text-danger"
+                                    style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorEmptyField##</p>
+                                <p v-else-if="this.CompanyNameError === this.errorCode2" class="text-danger"
+                                    style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorInputSize##</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label for="checkoutBillingProfession" class="form-label">##Profession##</label><span
+                                    class="text-danger ps-1">*</span>
+                                <input type="text" name="checkoutBillingProfession" id="checkoutBillingProfession"
+                                    :class="ValidationClassProfession" v-model="Profession"
+                                    @blur="validateAndSetInvoice('Profession', Profession, false)" required>
+                                <p v-if="this.ProfessionError === this.errorCode1" class="text-danger"
+                                    style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorEmptyField##</p>
+                                <p v-else-if="this.ProfessionError === this.errorCode2" class="text-danger"
+                                    style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorInputSize##</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label for="checkoutBillingTaxOffice" class="form-label">##TaxOffice##</label><span
+                                    class="text-danger ps-1">*</span>
+                                <input type="text" name="checkoutBillingTaxOffice" id="checkoutBillingTaxOffice"
+                                    :class="ValidationClassTaxOffice" v-model="TaxOffice"
+                                    @blur="validateAndSetInvoice('TaxOffice', TaxOffice, false)" required>
+                                <p v-if="this.TaxOfficeError === this.errorCode1" class="text-danger"
+                                    style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorEmptyField##</p>
+                                <p v-else-if="this.TaxOfficeError === this.errorCode2" class="text-danger"
+                                    style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorInputSize##</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label for="checkoutBillingTIN" class="form-label">##TIN##</label><span
+                                    class="text-danger ps-1">*</span>
+                                <input type="text" type="text" name="checkoutBillingTIN" id="checkoutBillingTIN"
+                                    :class="ValidationClassTIN" v-model="TIN" @blur="validateAndSetInvoice('TIN', TIN, false)"
+                                    required>
+                                <p v-if="this.TINError === this.errorCode1" class="text-danger"
+                                    style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorEmptyField##</p>
+                                <p v-else-if="this.TINError === this.errorCode2" class="text-danger"
+                                    style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorInputSize##</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="checkoutBillingCompanyPhone">##CompanyPhoneNumber##</label>
+                                <input type="text" name="checkoutBillingCompanyPhone" id="checkoutBillingCompanyPhone"
+                                    :class="ValidationClassCompanyPhone" v-model="CompanyPhone"
+                                    @blur="validateAndSetInvoice('CompanyPhone', CompanyPhone, true)">
+                                <p v-if="this.CompanyPhoneError === this.errorCode1" class="text-danger"
+                                    style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorEmptyField##</p>
+                                <p v-else-if="this.CompanyPhoneError === this.errorCode2" class="text-danger"
+                                    style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorInputSize##</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </form>
-        </div>
-    </div>
-    <!-- Invoice Details -->
-    <div>
-        <input type="checkbox" name="invoiceGroup" id="radioInvoice" value="invoice" class="me-2 ignoreInput"
-            v-model="invoiceType" @input="toggleInvoiceDetails" />
-        <label class="pb-3" :for="'radioInvoice'">##Invoice##</label>
-    </div>
-    <div v-if="isInvoice" class="invoice-wrap">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="mb-3">
-                    <label for="checkoutBillingCompanyName" class="form-label">##CompanyName##</label><span
-                        class="text-danger ps-1">*</span>
-                    <input type="text" name="checkoutBillingCompanyName" id="checkoutBillingCompanyName"
-                        :class="ValidationClassCompanyName" v-model="CompanyName"
-                        @blur="validateAndSetInvoice('CompanyName', CompanyName, false)" required>
-                    <p v-if="this.CompanyNameError === this.errorCode1" class="text-danger"
-                        style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorEmptyField##</p>
-                    <p v-else-if="this.CompanyNameError === this.errorCode2" class="text-danger"
-                        style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorInputSize##</p>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="mb-3">
-                    <label for="checkoutBillingProfession" class="form-label">##Profession##</label><span
-                        class="text-danger ps-1">*</span>
-                    <input type="text" name="checkoutBillingProfession" id="checkoutBillingProfession"
-                        :class="ValidationClassProfession" v-model="Profession"
-                        @blur="validateAndSetInvoice('Profession', Profession, false)" required>
-                    <p v-if="this.ProfessionError === this.errorCode1" class="text-danger"
-                        style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorEmptyField##</p>
-                    <p v-else-if="this.ProfessionError === this.errorCode2" class="text-danger"
-                        style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorInputSize##</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="mb-3">
-                    <label for="checkoutBillingTaxOffice" class="form-label">##TaxOffice##</label><span
-                        class="text-danger ps-1">*</span>
-                    <input type="text" name="checkoutBillingTaxOffice" id="checkoutBillingTaxOffice"
-                        :class="ValidationClassTaxOffice" v-model="TaxOffice"
-                        @blur="validateAndSetInvoice('TaxOffice', TaxOffice, false)" required>
-                    <p v-if="this.TaxOfficeError === this.errorCode1" class="text-danger"
-                        style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorEmptyField##</p>
-                    <p v-else-if="this.TaxOfficeError === this.errorCode2" class="text-danger"
-                        style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorInputSize##</p>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="mb-3">
-                    <label for="checkoutBillingTIN" class="form-label">##TIN##</label><span
-                        class="text-danger ps-1">*</span>
-                    <input type="text" type="text" name="checkoutBillingTIN" id="checkoutBillingTIN"
-                        :class="ValidationClassTIN" v-model="TIN" @blur="validateAndSetInvoice('TIN', TIN, false)"
-                        required>
-                    <p v-if="this.TINError === this.errorCode1" class="text-danger"
-                        style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorEmptyField##</p>
-                    <p v-else-if="this.TINError === this.errorCode2" class="text-danger"
-                        style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorInputSize##</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="mb-3">
-                    <label class="form-label" for="checkoutBillingCompanyPhone">##CompanyPhoneNumber##</label>
-                    <input type="text" name="checkoutBillingCompanyPhone" id="checkoutBillingCompanyPhone"
-                        :class="ValidationClassCompanyPhone" v-model="CompanyPhone"
-                        @blur="validateAndSetInvoice('CompanyPhone', CompanyPhone, true)">
-                    <p v-if="this.CompanyPhoneError === this.errorCode1" class="text-danger"
-                        style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorEmptyField##</p>
-                    <p v-else-if="this.CompanyPhoneError === this.errorCode2" class="text-danger"
-                        style="width:100%; margin-top:0.375rem; font-size:0.75rem;">##ErrorInputSize##</p>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -262,7 +264,7 @@
 
 <div class="shipping-wrap">
     <h4 class="h5 fw-bold mb-3 py-3 border-bottom head__title">##Shipping##</h4>
-    <div class="border" id="shippingAddress-method">
+    <div class="px-3 pb-2 newAddress pt-2" id="shippingAddress-method">
 
         <!-- Same As Billing Address Option -->
         <div class="shippingAddress-option py-2 px-3">

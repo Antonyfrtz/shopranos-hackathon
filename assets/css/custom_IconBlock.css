@@ -46,10 +46,11 @@
     border-radius: 56px;
     padding-right: var(--dl-space-space-oneandhalfunits);
     padding-bottom: var(--dl-space-space-unit);
-    background-color: rgb(250, 216, 122);
+    background-color: #fad87a !important;
   }
   .find-find2:hover {
     opacity: 0.5;
+    background-color: #f7c439 !important;
   }
   .find-fragment1, .find-fragment2, .find-fragment3 {
     display: contents;

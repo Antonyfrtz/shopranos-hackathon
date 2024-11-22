@@ -24,9 +24,9 @@
                     <div v-if="filterGroup.key !== 'priceid' && filterGroup.key !== 'retailPriceId'" class="tabcontent widget widget-filter" :id="'filter-'+index" :class="[{'open': (index === 0)}]">
                         <ul class="widget-list widget-filter-list list-unstyled" data-simplebar data-simplebar-auto-hide="false">
                             <li v-for="(value, index) in filterGroup.values" v-bind:key="value" class="widget-filter-item d-flex justify-content-between align-items-center">
-                                <div class="form-check">
+                                <div>
                                     <input class="form-check-input" type="checkbox" v-on:change="this.sendFilterRequest(1)" :disabled="value.count==0" v-model="value.selected" :id="'filter-'+value.slug">
-                                    <label class="form-check-label widget-filter-item-text" for="">{{value.name}}</label>
+                                    <label class="form-check-label widget-filter-item-text" style="height:24px;line-height: 24px;" for="">{{value.name}}</label>
                                 </div>
                             </li>
                         </ul>
@@ -143,9 +143,9 @@
                         <h3 v-else-if="filterGroup.key !== 'priceid'" class="widget-title p" @click="toggleFilter">{{filterGroup.name}}</h3>
                         <ul v-if="filterGroup.key !== 'priceid' || filterGroup.key !=='retailPriceId'" class="widget-list widget-filter-list list-unstyled" data-simplebar data-simplebar-auto-hide="false">
                             <li v-for="(value, index) in filterGroup.values" v-bind:key="value" class="widget-filter-item d-flex justify-content-between align-items-center">
-                                <div class="form-check">
+                                <div>
                                     <input class="form-check-input" type="checkbox" v-on:change="this.sendFilterRequest(1)" :disabled="value.count==0" v-model="value.selected" :id="'filter-'+value.slug">
-                                    <label class="form-check-label widget-filter-item-text" for="">{{value.name}}</label>
+                                    <label class="form-check-label widget-filter-item-text" style="height:24px;line-height: 24px;" for="">{{value.name}}</label>
                                 </div>
                                 <span class="widget-filter-item__count">{{value.count}}</span>
                             </li>

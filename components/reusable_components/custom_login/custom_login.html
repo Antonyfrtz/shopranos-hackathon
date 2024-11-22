@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="{{Assets}}/css/custom_login.css">
+<form @submit.prevent="checkForm" class="needs-validation" novalidate="">
+    <!-- Email Input -->
+    <div class="form-input-wrap mb-3">
+        <label class="form-label" :for="'emailLog-'+id">Email Address</label>
+        <input
+            class="form-control"
+            v-model="emailLog"
+            type="email"
+            :id="'emailLog-'+id"
+            :name="'emailLog-'+id"
+            required
+        />
+        <small v-if="emailError === 0" class="invalid-feedback" style="display:block">
+            Invalid Email
+        </small>
+        <small v-else-if="emailError === 1" class="invalid-feedback" style="display:block">
+            Empty Email Field
+        </small>
+    </div>
+
+    <!-- Password Input -->
+    <div class="form-input-wrap mb-3">
+        <label class="form-label" :for="'passwordLog-'+id">Password</label>
+        <div class="password-toggle">
+            <input
+                class="form-control"
+                v-model="passwordLog"
+                :type="passwordFieldType"
+                :id="'passwordLog-'+id"
+                :name="'passwordLog-'+id"
+                required
+            />
+            <label class="password-toggle-btn" aria-label="Show/hide password">
+                <input
+                    class="password-toggle-check"
+                    type="checkbox"
+                    @click="toggleVisibility"
+                />
+                <span class="password-toggle-indicator"></span>
+            </label>
+        </div>
+        <small v-if="passwordError === 0" class="invalid-feedback" style="display:block">
+            Your Password Is Empty
+        </small>
+    </div>
+
+    <!-- Error Messages -->
+    <small v-if="wrongCredentials" class="creds-error">Wrong Credentials</small>
+    <small v-if="isLocked" class="creds-error">User Locked </small>
+
+    <!-- Forgot Password Link -->
+    <div class="mb-3 d-flex flex-wrap justify-content-between">
+        <div class="form-check mb-2"></div>
+        <a class="fs-sm" href="/forgotpassword">
+            <small>Forgot Password?</small>
+        </a>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="btn btn-primary d-block w-100 mb-3" type="submit" :disabled="isloading">
+        <div v-show="!isloading">Sign In</div>
+        <span v-show="isloading" class="ml-2 spinner-border spinner-border-sm text-white"></span>
+    </button>
+
+    <!-- Sign Up Link -->
+    <div class="d-flex flex-wrap justify-content-center align-items-center no-acc">
+        <small>No account?</small>
+        <a v-if="!signupInternal" href="/register">
+            <small>Sign Up here</small>
+        </a>
+        <div v-else role="button" class="signUpButton">
+            <small>Sign Up here</small>
+        </div>
+    </div>
+</form>

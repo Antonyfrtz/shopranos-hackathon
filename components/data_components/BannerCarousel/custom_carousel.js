@@ -21,7 +21,9 @@ const custom_carousel = {
                 loop: true,
                 pagination: {
                     el: ".swiper-pagination-" + this.model.id,
-                    clickable: true
+                    clickable: true,
+                    bulletClass: 'custom-bullet', // Custom bullet class
+                    bulletActiveClass: 'custom-bullet-active'
                 },
                 navigation: {
                     nextEl: ".swiper-button-next-" + this.model.id,
@@ -29,6 +31,11 @@ const custom_carousel = {
                 },
                 slidesPerView: this.customSlideDefinition,
                 slidesPerGroup: this.customSlideDefinition,
+                autoplay: {
+                    delay: 8000,
+                    disableOnInteraction: false,
+                },
+                speed: 1000,
             });
             
             this.carouselLoaded = true;

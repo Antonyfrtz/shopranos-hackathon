@@ -1,0 +1,143 @@
+.contact-16 {
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    gap: 30px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content1{
+    gap:32px !important;
+}
+
+.content2{
+    border-bottom: 0px !important;
+}
+
+.tagline-wrapper .tagline {
+    font-size: 14px;
+    margin-top: 32px;
+    text-transform: uppercase;
+    color: #8b5f3c;
+    margin-bottom: 10px;
+}
+
+.content1 .heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.content1 .text {
+    font-size: 16px;
+    color: #666666;
+}
+
+.map-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.content2 {
+    animation: fadeIn 1s ease-in-out;
+    flex: 1 1 calc(30% - 20px);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-envelope {
+    width: 40px;
+    height: 40px;
+}
+
+.contact-info .heading1 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.contact-info .link, .contact-info .text1 {
+    font-size: 14px;
+    color: #555555;
+}
+
+.contact-info .link {
+    text-decoration: none;
+    color: #8b5f3c;
+}
+
+.contact-info .link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .map-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content2 {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title .heading {
+        font-size: 24px;
+    }
+
+    .content1 .text {
+        font-size: 14px;
+    }
+}
+  .contact-16-parent {
+    background-color: var(--background-color-primary);
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    font-size: var(--text-regular-normal-size);
+    color: var(--text-primary);
+    font-family: var(--text-regular-normal);
+  }
+  section.container{
+    background-color: #333333;
+    color:#f1f1f1;  
+    max-width: none !important;
+    margin-bottom: 0 !important;
+    padding-top: 40px;
+  }
+  div.ms-auto button.btn{
+    --bs-body-color: #fad87a !important; /* override bootstrap  */
+  }
+  .col-lg-12{
+    width:540px;
+    margin:auto;
+    padding: 20px;
+  }

@@ -1,0 +1,140 @@
+/* General Slide Animation */
+.animated-slide {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-in-out;
+}
+
+.swiper-slide-active .animated-slide {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.swiper-button-next.custom-next, .swiper-button-prev.custom-prev {
+    width: 20px; /* Smaller size */
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3); /* Transparent white background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7); /* White icon with slight transparency */
+    box-shadow: none;
+    position: absolute;
+    z-index: 10;
+    transform: translateY(-50%);
+    font-size: 14px;
+    transition: none; /* Disable transition if not needed */
+}
+
+.custom-next, .custom-prev {
+    width: 50px;
+    height: 50px;
+    background: #f1f1f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+
+
+.custom-next:hover, .custom-prev:hover {
+    background: #333;
+    color: #fff;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Background Animation */
+.bg-overlay {
+    background-size: cover;
+    background-position: center;
+    animation: backgroundMove 10s linear infinite;
+  }
+  @keyframes backgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+  }
+  .bg-overlay {
+    animation: kenBurns 15s ease-in-out infinite;
+  }
+  @keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+
+/* Responsive Grid Layout for Banners */
+.banners-wrap.boxed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Fine-tuned Slide Transition */
+.swiper-wrapper {
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .custom-next, .custom-prev {
+        width: 18px; /* Even smaller on mobile */
+        height: 18px;
+        right: 10px;
+        left: 10px;
+    }
+
+    .custom-next {
+        right: 15px;
+    }
+
+    .custom-prev {
+        left: 15px;
+    }
+
+    .banners-wrap.boxed {
+        gap: 15px;
+    }
+}
+
+.custom-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3); /* Inactive bullet color */
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .custom-bullet-active {
+    width: 20px;
+    border-radius: 20px;
+    background-color: #397b53; /* Instagram blue active color */
+    transform: scale(1.1); /* Slightly enlarge the active bullet */
+    transition: all 0.4s ease-in; 
+  }
+  
+  .swiper-pagination {
+    position: relative;
+    bottom: -20px; /* Position below the section */
+    text-align: center; /* Center align pagination */
+    z-index: 5;
+  }

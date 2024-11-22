@@ -16,7 +16,7 @@
         </section>
     </div>
 </section>
-<section :id="'comp-'+this.model.id" v-else-if="(cart!=null && cart.cartItems.length > 0) || emptyCartAfterDeletion" class="container cart-wrapper">
+<section :id="'comp-'+this.model.id" v-else-if="(cart!=null && cart.cartItems.length > 0) || emptyCartAfterDeletion" class="container">
     <div class="row">
         <div class="col-lg-8">
             <!-- Actions -->
@@ -204,7 +204,7 @@
         </aside>
     </div>
 </section>
-<section v-else class="container cart-wrapper" :id="'comp-'+this.model.id">
+<section v-else class="container" :id="'comp-'+this.model.id">
     <div class="row">
         <div class="col-12">
             <div class="actions-wrapper row justify-content-between">
@@ -241,8 +241,8 @@
                 </div>
             </div>
             <div class="row no-items-wrapper justify-content-center">
-                <div class="col-5 card d-flex justify-content-center flex-column align-items-center mt-5">
-                    <span class="s-cart large"><span class="d-none">##Cart##</span></span>
+                <div class="col-5 card d-flex justify-content-center flex-column align-items-center">
+                    <img class="w-100" src="https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/aa4fd670-9987-45fb-8e7a-3c1d4000a65e/aa4fd670-9987-45fb-8e7a-3c1d4000a65e">
                     <div class="mt-4">
                         <p class="mb-0">##NoProductsInTheCart##</p>
                     </div>

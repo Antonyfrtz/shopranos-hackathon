@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{Assets}}/css/custom_checkout.css">
+
 <section class="checkout-wrapper" :id="'comp-'+this.model.id" :class="this.model?.cssClass">
 
     <!-- SignIn/Up - Guest -->
@@ -10,11 +12,11 @@
             <div class="card col-lg-5 text-center d-flex flex-column justify-content-center align-items-center">
                 <span class="s-cart"><span class="d-none">##Cart##</span></span>
                 <h4>##ProceedCheckout##</h4>
-                <div class="btn btn-primary py-2 px-4" @click="toggleUserSignIn">
+                <div class="btn btn-primary py-2 px-4 transition" @click="toggleUserSignIn">
                     ##LoginRegister##
                 </div>
 
-                <button type="button" class="btn btn-outline-primary mt-3 py-2 px-4" @click="enableGuest">
+                <button type="button" class="btn btn-outline-primary mt-3 py-2 px-4 transition" @click="enableGuest">
                     ##GuestCheckout##
                 </button>
             </div>
