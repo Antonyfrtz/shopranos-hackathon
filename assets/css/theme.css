@@ -9048,12 +9048,16 @@ body header.topBarTop.stickyNavbarWrap .topbar {
   .filterlist-content__sidebar #shop-sidebar .widget .retail-price-slider,
   .filterlist-content__sidebar #shop-sidebar .widget .price-slider {
     margin-bottom: min(max(14px, 14 / 1440 * 100vw), 14px) !important;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }
 @media only screen and (min-width: 744px) and (max-width: 1439px) {
   .filterlist-content__sidebar #shop-sidebar .widget .retail-price-slider,
   .filterlist-content__sidebar #shop-sidebar .widget .price-slider {
     margin-bottom: min(max(14px, 14 / 744 * 100vw), 14px) !important;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }
 @media only screen and (max-width: 743px) {
@@ -9066,6 +9070,8 @@ body header.topBarTop.stickyNavbarWrap .topbar {
   .filterlist-content__sidebar #shop-sidebar .widget .retail-price-slider,
   .filterlist-content__sidebar #shop-sidebar .widget .price-slider {
     margin-bottom: calc(14px * 2) !important;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }
 .filterlist-content__sidebar #shop-sidebar .widget .retail-price-slider .noUi-connects,
@@ -9090,7 +9096,8 @@ body header.topBarTop.stickyNavbarWrap .topbar {
   top: -7px;
   border: 0;
   background: var(--bs-primary);
-  box-shadow: none;
+  cursor: pointer;
+  background-color: #8b5f3c;
 }
 .filterlist-content__sidebar #shop-sidebar .widget .retail-price-slider .noUi-horizontal .noUi-handle:before, .filterlist-content__sidebar #shop-sidebar .widget .retail-price-slider .noUi-horizontal .noUi-handle:after,
 .filterlist-content__sidebar #shop-sidebar .widget .price-slider .noUi-horizontal .noUi-handle:before,

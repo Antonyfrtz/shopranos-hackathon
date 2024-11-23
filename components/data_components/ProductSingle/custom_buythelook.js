@@ -50,6 +50,9 @@ const productsinglecustom_buythelook = {
             }
         });
         
+        // if(document.getElementById("dateInput").value == ''){
+        //     document.querySelector(".product-cart-qty button").disabled = true;
+        // }
         // console.log(this._product.productVariants);
         // console.log(this.dimension1Array);
         // console.log(this.dimension2Array);
@@ -569,18 +572,13 @@ const productsinglecustom_buythelook = {
             }
         },
         setVariants(data, classes) {
-            var str = "";
+            var str = `<div class="attribute calendar">`;
             var uniqueDims1 = [];
             var uniqueDims2 = [];
             
+            
             if (data.dimension1 !== null && this.productData.variant.dimension1ItemId) {
                 if(data.dimension1.name === "Ημερομηνία"){
-                    // Display the calendar input for the Ημερομηνία dimension
-                    str += `<div class="attribute calendar">
-                        <p class="variantName">${data.dimension1.name}</p>
-                        <input type="date" id="dateInput" class='p-3' placeholder="Select date">
-                    </div>
-                    `;
                     data.dimension1.items.forEach(dimensionItem => {
                         // Map the date to the corresponding dimensionItem.id
                         this.dateToDimensionMap[dimensionItem.value] = dimensionItem.id;
@@ -594,6 +592,12 @@ const productsinglecustom_buythelook = {
                             }
                         });
                     });
+                    // Display the calendar input for the Ημερομηνία dimension
+                    str += `
+                                <p class="variantName">${data.dimension1.name}</p>
+                                <input type="date" id="dateInput" class='p-3' placeholder="Select date">
+                            </div>
+                    `;
                 }
                 else{
                     str += `<div class="attribute ${this.getVariantCode(data.dimension1.type)}">
@@ -725,6 +729,10 @@ const productsinglecustom_buythelook = {
                     }
                 });
             }
+
+            // if(document.getElementById("dateInput").value == ''){
+            //     document.querySelector(".product-cart-qty button").disabled = true;
+            // }
 
 
             return str;

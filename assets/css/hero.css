@@ -400,8 +400,8 @@
     padding-top: 15px;
     padding-bottom: 5px;
     box-sizing: border-box;
-    max-height: 400px;  /* Optional: If you want a fixed max height for scrolling */
-    overflow-y: auto;   /* Optional: Adds scroll to dropdown if content overflows */
+    max-height: 400px; 
+    overflow-y: auto;   
   }
   .dropdown-card.loc{
     position: fixed;
