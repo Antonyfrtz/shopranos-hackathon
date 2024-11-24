@@ -238,7 +238,7 @@
   }
 
   .filterlist-single_product div.offer-container{
-    height: 44vh !important;
+    height: 42vh !important;
   }
 
   .filterlist-single_product div.offer-container div.offer-content img.offer-image{
@@ -474,21 +474,76 @@ h4, h5, h2 {
 .transition {
   transition: all 0.3s ease-in-out;
 }
-
-.form-check-input, .checkbox-wrap input {
-  position: relative;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
-  margin:0;
-  margin-right: 5px;
-  border: 2px solid #757575;
-  background-color: white;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+.animated-slide {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease-in-out;
+}
+.swiper-slide-active .animated-slide {
+  opacity: 1;
+  transform: translateY(0);
+}
+.custom-next, .custom-prev {
+  width: 50px;
+  height: 50px;
+  background: #f1f1f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.custom-next:hover, .custom-prev:hover {
+  transform: scale(1.1);
+  background: #333;
+  color: #fff;
+}
+.bg-overlay {
+  background-size: cover;
+  background-position: center;
+  animation: backgroundMove 10s linear infinite;
+}
+@keyframes backgroundMove {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 50% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
+.bg-overlay {
+  animation: kenBurns 15s ease-in-out infinite;
+}
+@keyframes kenBurns {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+.banners-wrap.boxed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-.form-check-input:checked, .checkbox-wrap input:checked {
-  background-color: #218838;
-  border-color: #218838;
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #f1f1f1;
+  border-radius: 50%;
+  transition: transform 0.3s, background 0.3s;
 }
+.swiper-pagination-bullet-active {
+  transform: scale(1.5);
+  background: #ff5733;
+} 
