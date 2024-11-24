@@ -354,6 +354,11 @@
   .variantValue input:focus{
     color:rgb(250, 216, 122) !important;
   }
+
+  #checkbox-5:focus {
+    background-color: #484848;
+  }
+
 /* General Enhancements */
 .container {
   max-width: 1200px;

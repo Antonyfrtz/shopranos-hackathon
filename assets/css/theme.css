@@ -4808,7 +4808,7 @@ body #cookie-settings-modal .modal-body .accordion-button:not(.collapsed):not(.s
   color: var(--bs-primary) !important;
 }
 body .forgot-password .card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
 }
 body .forgot-password .card:before {
   background: linear-gradient(90deg, transparent 12%, var(--bs-primary) 0%, var(--body-primary-txt-color) 55%, transparent 88%);
@@ -4836,7 +4836,7 @@ body .login-wrap form .creds-error {
   color: var(--bs-primary);
 }
 body .login-wrapper .card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
 }
 body .login-wrapper .card > [class^=s-]:not(.large):not(.medium):not(.small):before, body .login-wrapper .card > [class*=" s-"]:not(.large):not(.medium):not(.small):before {
   color: var(--bs-primary);
@@ -14858,4 +14858,13 @@ body.hasShadow:not(.modal-open) .navbar-wrap:before {
 }
 body.hasShadow .textwithimage-wrapper .btn-arrow {
   box-shadow: 0px 20px 35px 0px rgba(0, 0, 0, 0.15);
+}
+.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3),.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control,.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select {
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+}
+
+.input-group.has-validation>:nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),.input-group.has-validation>.dropdown-toggle:nth-last-child(n+4),.input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-control,.input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-select {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
