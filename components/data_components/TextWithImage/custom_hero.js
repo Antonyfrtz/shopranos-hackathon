@@ -1,4 +1,7 @@
 const heroComponent = {
+      props: {
+        model: Object
+    },
     data() {
         return {
           videoSrc: 'https://www.youtube.com/watch?v=zXTNCkT8qZo',  // Path to your video

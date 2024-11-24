@@ -370,13 +370,13 @@
 }
 
 .btn-primary {
-  background-color: #28a745; /* Modern green color */
+  background-color: #397b53; /* Modern green color */
   border: none;
   color: #fff;
 }
 
 .btn-primary:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: #224931; /* Darker green on hover */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 

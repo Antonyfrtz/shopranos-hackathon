@@ -10754,7 +10754,7 @@ body header.topBarTop.stickyNavbarWrap .topbar {
 .login-wrapper {
   position: relative;
 }
-@media only screen and (min-width: 1440px) {
+/* @media only screen and (min-width: 1440px) {
   .login-wrapper {
     margin-block: min(max(60px, 60 / 1440 * 100vw), 76px) !important;
   }
@@ -10773,11 +10773,8 @@ body header.topBarTop.stickyNavbarWrap .topbar {
   .login-wrapper {
     margin-block: calc(76px * 2) !important;
   }
-}
-.login-wrapper .card {
-  box-shadow: 0px 16px 48px 0px rgba(32, 32, 32, 0.16);
-  height: auto;
-}
+} */
+
 @media only screen and (min-width: 1440px) {
   .login-wrapper .card {
     padding: min(max(56px, 56 / 1440 * 100vw), 56px) !important;
@@ -10861,17 +10858,7 @@ body header.topBarTop.stickyNavbarWrap .topbar {
     margin-bottom: calc(32px * 2) !important;
   }
 }
-.login-wrapper .card:before, .login-wrapper .card:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 100vw;
-  height: 43vw;
-  pointer-events: none;
-  border-radius: 100%;
-  transform: translateX(-50%);
-  z-index: -1;
-}
+
 @media only screen and (max-width: 743px) {
   .login-wrapper .card:before, .login-wrapper .card:after {
     width: 130vw;
