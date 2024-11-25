@@ -307,16 +307,18 @@
     </div>
 
     <!-- No products -->
-    <div v-else-if="dataLoaded && checkoutData.orderCode == null && (checkout==null || checkout.cartItems.length==0) && this.activeStep !== 'orderplaced' && (!signInUser && !signUpUser)" class="container checkout-layout">
+    <div v-else-if="dataLoaded && checkoutData.orderCode == null && (checkout==null || checkout.cartItems.length==0) && this.activeStep !== 'orderplaced' && (!signInUser && !signUpUser)" class="container checkout-layout" style="padding-top: 0;">
         <div class="cart-wrap row">
             <a href="https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/c5fa718c-1064-40c3-9646-7cdc32b2b061/c5fa718c-1064-40c3-9646-7cdc32b2b061" class="btn btn-outline-secondary cart">
                 <span class="s-arrow-long"></span>##Go_back_homepage##
             </a>
         </div>
-        <div class="card-wrap row justify-content-center">
-            <div class="card col-lg-5 text-center d-flex flex-column justify-content-center align-items-center">
-                <span class="s-cart"><span class="d-none">##Cart##</span></span>
-                <p class="mb-0">##Noproducts##</p>
+        <div class="row no-items-wrapper justify-content-center" id="nothing">
+            <div class="col-5 card d-flex justify-content-center flex-column align-items-center">
+                <img class="w-100" src="https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/aa4fd670-9987-45fb-8e7a-3c1d4000a65e/aa4fd670-9987-45fb-8e7a-3c1d4000a65e">
+                <div class="mt-4">
+                    <p class="mb-0">##NoProductsInTheCart##</p>
+                </div>
             </div>
         </div>
     </div>

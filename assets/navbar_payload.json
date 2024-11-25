@@ -210,13 +210,13 @@
           "image": null,
           "navigations": [
             {
-              "navigationTitle": "New Balance",
+              "navigationTitle": "Cruises",
               "navigationType": "Brand",
               "relativeId": "352e6fde-81d3-4352-a942-7f5337f58087",
-              "url": "/brand/new-balance",
+              "url": "/brand/cruises",
               "image": {
                 "id": "1e176db2-e0e9-44d0-897f-6f09ed4d19bc",
-                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/811805d3-7fff-4634-be36-07e0d5a22827/811805d3-7fff-4634-be36-07e0d5a22827?1730136447.272833",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/67cb55f2-2da5-4331-9bea-e47bc1d0b30c/67cb55f2-2da5-4331-9bea-e47bc1d0b30c?1732536153.1533735",
                 "position": null,
                 "alt": null,
                 "mediaType": null,
@@ -230,10 +230,10 @@
               "banners": null
             },
             {
-              "navigationTitle": "Stradivarius",
+              "navigationTitle": "Sightseeing Tours",
               "navigationType": "Brand",
               "relativeId": "55161acd-87e5-47e4-97c9-ad47d87c63d5",
-              "url": "/brand/stradivarius",
+              "url": "/brand/sightseeing-tour",
               "image": {
                 "id": "71a2a9be-9b81-40b5-8c0e-8ced71051cdc",
                 "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/8bd80646-101e-4dd4-b457-3d1fa69fd77c/8bd80646-101e-4dd4-b457-3d1fa69fd77c?1730136447.2740555",
@@ -250,13 +250,13 @@
               "banners": null
             },
             {
-              "navigationTitle": "Mango",
+              "navigationTitle": "City Tours",
               "navigationType": "Brand",
-              "relativeId": "8810b403-35c4-4882-8385-a466970eca9b",
-              "url": "/brand/mango",
+              "relativeId": "7f26d3af-d961-410b-8199-a1920d99c776",
+              "url": "/brand/city-tour",
               "image": {
                 "id": "3c9790ff-8bdc-477b-8a89-1899f67f57e2",
-                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/c5c139a5-d62a-4ded-9c5b-4353539b205a/c5c139a5-d62a-4ded-9c5b-4353539b205a?1730136447.2722504",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/c15b01d7-dd07-4354-b9d0-fa82646faed8/c15b01d7-dd07-4354-b9d0-fa82646faed8?1732534811.8866892",
                 "position": null,
                 "alt": null,
                 "mediaType": null,
@@ -270,13 +270,13 @@
               "banners": null
             },
             {
-              "navigationTitle": "Nike",
+              "navigationTitle": "Athletic Tours",
               "navigationType": "Brand",
               "relativeId": "9f5932d5-bd58-4cda-a40e-718081322723",
-              "url": "/brand/nike",
+              "url": "/brand/athletic-tour",
               "image": {
                 "id": "3d219eb6-fcef-494d-85d7-0b14e440e900",
-                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/8d00ea39-5f9d-418f-bf3a-63c2fa503997/8d00ea39-5f9d-418f-bf3a-63c2fa503997?1730136447.273434",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/203b7b03-7f0e-47be-a463-86291c4d9903/203b7b03-7f0e-47be-a463-86291c4d9903?1732537179.279122",
                 "position": null,
                 "alt": null,
                 "mediaType": null,
@@ -290,13 +290,13 @@
               "banners": null
             },
             {
-              "navigationTitle": "Asos",
+              "navigationTitle": "Mountain Tours",
               "navigationType": "Brand",
-              "relativeId": "e012eaaa-47ad-4de2-9aca-7fa224f850ca",
-              "url": "/brand/asos",
+              "relativeId": "d1a80a79-daa1-46e5-87d7-9f14e6a7d0f1",
+              "url": "/brand/mountain-tour",
               "image": {
                 "id": "7317baa6-5f6a-44b7-99b9-157ebf1e0753",
-                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/6f5041d5-d0f9-4f0e-8c3d-6ff5e1dfa158/6f5041d5-d0f9-4f0e-8c3d-6ff5e1dfa158?1730136447.2746315",
+                "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/0879c71a-84b0-4b7f-9ac3-6d8c912e58a7/0879c71a-84b0-4b7f-9ac3-6d8c912e58a7?1732496206.684467",
                 "position": null,
                 "alt": null,
                 "mediaType": null,
@@ -313,7 +313,7 @@
               "navigationTitle": "Beach Tours",
               "navigationType": "Brand",
               "relativeId": "f5b5cd95-72c2-451c-8f05-569df8f42b98",
-              "url": "/brand/adidas",
+              "url": "/brand/beach-tour",
               "image": {
                 "id": "543d0d1e-4ec8-4574-850d-dd0cbcb66039",
                 "link": "https://media.shopranos.eu/media/40b62232-78b3-452f-b802-188248e67873/41242351-c4dc-4317-919d-6981cd6233b5/41242351-c4dc-4317-919d-6981cd6233b5?1731079446.5322833",

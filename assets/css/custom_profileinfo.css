@@ -1,0 +1,135 @@
+/* Wrapper Styling */
+.profileinfo-wrapper {
+    max-width: 600px;
+    margin-left: 50px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profileinfo-wrapper__top {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.profileinfo-wrapper__bottom {
+    margin-top: 20px;
+}
+
+/* Smaller Input Fields */
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.form-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input:disabled {
+    background: #e9ecef;
+    color: #6c757d;
+}
+
+/* Adjust form field width to be smaller */
+.profileinfo-wrapper__bottom .col-sm-6 {
+    max-width: 45%;
+}
+
+/* Button */
+.btn-outline-primary {
+    border: 1px solid #27dc4e;
+    color: #27dc4e;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.btn-outline-primary:hover {
+    background: #199033;
+    color: #fff;
+}
+
+/* Toast */
+.toast {
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.toast-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    border: none;
+    background: transparent;
+}
+
+.toast-body {
+    font-size: 14px;
+    padding: 10px;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.password-toggle {
+    position: relative;
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Error Messages */
+.text-danger {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.text-success {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #28a745 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .profileinfo-wrapper {
+        padding: 15px;
+    }
+
+    .btn-outline-primary {
+        width: 100%;
+    }
+
+    /* Adjust input widths for smaller screens */
+    .profileinfo-wrapper__bottom .col-sm-6 {
+        width: 100%;
+    }
+}

@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+.promise-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh; /* Reduced height for more minimal feel */
+  background-color: #f7f7f7;
+  padding: 10px; /* Reduced padding */
+  box-sizing: border-box;
+}
+
+/* Styling the minimal bubble-like container */
+.promise-bubble {
+  background-color: #fff;
+  border: 1px solid #31a35f; /* Thinner border for minimal look */
+  border-radius: 15px; /* Slightly smaller rounded corners */
+  padding: 20px; /* Reduced padding */
+  width: 90%;
+  max-width: 500px; /* Smaller width for more compact design */
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Styling the title inside the bubble */
+.promise-title {
+  font-weight: 400; /* Lighter font weight */
+  color: #333;
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+/* Styling the paragraph inside the bubble */
+.promise-text {
+  font-size: 0.9rem; /* Smaller font size */
+  line-height: 1.5; /* Slightly tighter line-height */
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .promise-bubble {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .promise-title {
+    font-size: 1.5rem; /* Adjust title size for smaller screens */
+  }
+
+  .promise-text {
+    font-size: 0.85rem; /* Smaller text for mobile */
+  }
+}

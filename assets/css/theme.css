@@ -9793,9 +9793,11 @@ body header.topBarTop.stickyNavbarWrap .topbar {
     height: calc(200px * 2) !important;
   }
 }
+.brandlist-single{
+  border-radius: 8px;
+}
 .brandlist-single a {
   border-radius: inherit;
-  padding: 1.5rem !important;
   border: 0;
   box-shadow: 0px 16px 90px 0px rgba(0, 0, 0, 0.06);
   display: flex;
@@ -9806,27 +9808,9 @@ body header.topBarTop.stickyNavbarWrap .topbar {
   transition: box-shadow 0.3s ease-in-out;
 }
 .brandlist-single a img {
+  width: 100%;
+  height: 100%;
   transition: 0.3s ease-in-out;
-}
-@media only screen and (min-width: 1440px) {
-  .brandlist-single a img {
-    width: min(max(150px, 150 / 1440 * 100vw), 150px) !important;
-  }
-}
-@media only screen and (min-width: 744px) and (max-width: 1439px) {
-  .brandlist-single a img {
-    width: min(max(130px, 130 / 744 * 100vw), 150px) !important;
-  }
-}
-@media only screen and (max-width: 743px) {
-  .brandlist-single a img {
-    width: min(max(120px, 120 / 375 * 100vw), 130px) !important;
-  }
-}
-@media only screen and (min-width: 1921px) {
-  .brandlist-single a img {
-    width: calc(150px * 2) !important;
-  }
 }
 .brandlist-single a:hover img {
   transform: scale(1.1);

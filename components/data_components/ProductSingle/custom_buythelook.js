@@ -114,7 +114,6 @@ const productsinglecustom_buythelook = {
                 }
             }
             this.initiateSwiper();
-
             if (this.checkVariantProduct(false, this.productData)) {
                 this.setVariants(this.productData, '.product-variants');
                 this.productData.productVariants.forEach(variant => {
@@ -576,7 +575,6 @@ const productsinglecustom_buythelook = {
             var uniqueDims1 = [];
             var uniqueDims2 = [];
             
-            
             if (data.dimension1 !== null && this.productData.variant.dimension1ItemId) {
                 if(data.dimension1.name === "Ημερομηνία"){
                     data.dimension1.items.forEach(dimensionItem => {
@@ -673,8 +671,9 @@ const productsinglecustom_buythelook = {
             }
 
             document.querySelector(classes).innerHTML = str;
-
+            var p = this._product.productVariants[this.activeProduct].dimension1ItemId;
             const specificDates = data.dimension1.items.map(item => String(item.value));
+            const defaultDate = Object.keys(this.dateToDimensionMap).find(date => this.dateToDimensionMap[date] === p);
             // Initialize Flatpickr
             flatpickr("#dateInput", {
                 enable: specificDates.map(date => {
@@ -683,6 +682,7 @@ const productsinglecustom_buythelook = {
                     return new Date(year+"-"+month+"-"+day);
                 }),
                 dateFormat: "d/m/Y",
+                defaultDate: defaultDate ? defaultDate.replace(/-/g, "/") : null,
                 onChange: (selectedDates) => {
                     if (selectedDates.length > 0) {
                         // Get the selected date in dd/mm/yyyy format

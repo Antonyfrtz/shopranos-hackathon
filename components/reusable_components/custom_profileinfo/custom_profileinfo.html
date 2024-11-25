@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="{{Assets}}/css/custom_profileinfo.css">
+
+<div class="profileinfo-wrapper d-flex flex-column align-items-center">
+  <!-- Top Section -->
+  <div class="profileinfo-wrapper__top text-center mb-4">
+      <div class=" large mb-4"><span class="d-none">##User Button##</span></div>
+      <h2 class="h5">##Manage Profile##</h2>
+      <p class="text-muted">##Profile Description##</p>
+  </div>
+
+  <!-- User Info Section -->
+  <div v-if="user" class="profileinfo-wrapper__bottom row gx-3 gy-2">
+      <div class="col-6">
+          <label for="account-fn" class="form-label" style="font-size: large;">##First Name##</label>
+          <input id="account-fn" class="form-control" type="text" v-model="user.firstName" disabled>
+      </div>
+      <div class="col-6">
+          <label for="account-ln" class="form-label" style="font-size: large;">##Last Name##</label>
+          <input id="account-ln" class="form-control" type="text" v-model="user.lastName" disabled>
+      </div>
+      <div class="col-12">
+          <label for="account-email" class="form-label" style="font-size: large;">Email</label>
+          <input id="account-email" class="form-control" type="email" v-model="user.email" disabled>
+      </div>
+      <div class="col-12 text-center mt-3">
+          <button @click="toggleModalChangePassword" class="btn btn-outline-primary px-4">##Change Password##</button>
+      </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div v-if="toastSuccessClass === 'show'" class="position-fixed top-50 start-50 translate-middle">
+      <div class="toast bg-success text-white" role="alert">
+          <div class="toast-header">
+              <button type="button" class="btn-close btn-close-white ms-auto" aria-label="Close" @click="clearForm()"></button>
+          </div>
+          <div class="toast-body text-center">##Success Message##</div>
+      </div>
+  </div>
+
+  <!-- Modal for Password Change -->
+  <div class="modal fade" :class="{ show: showModal }" id="profile-pass">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">##Change Password##</h5>
+                  <button class="btn-close" type="button" aria-label="Close" @click="closeModal()"></button>
+              </div>
+              <div class="modal-body">
+                  <form @submit.prevent="checkForm">
+                      <div class="mb-3">
+                          <label for="changeEmail" class="form-label">##Email Address##*</label>
+                          <input id="changeEmail" class="form-control" type="email" v-model="changeEmail">
+                          <small v-if="changeEmailError === 0" class="text-danger">##Invalid Email Text##</small>
+                          <small v-if="changeEmailError === 1" class="text-danger">##Empty Email Text##</small>
+                          <small v-if="changeEmailError === 2" class="text-danger">##Not User Email##</small>
+                      </div>
+                      <div class="mb-3">
+                          <label for="oldPassword" class="form-label">##Old Password##*</label>
+                          <input id="oldPassword" class="form-control" type="password" v-model="oldPassword">
+                          <small v-if="oldPasswordError === 0" class="text-danger">##Empty Password Text##</small>
+                      </div>
+                      <div class="mb-3">
+                          <label for="newPassword" class="form-label">##New Password##*</label>
+                          <input id="newPassword" class="form-control" type="password" v-model="newPassword">
+                          <small v-if="newPasswordError === 0" class="text-danger">##Empty Password Text##</small>
+                          <small v-if="newPasswordError === 1" class="text-danger">##Password is too short##</small>
+                      </div>
+                      <div class="mb-3">
+                          <label for="reTypeNewPassword" class="form-label">##Retype New Password##*</label>
+                          <input id="reTypeNewPassword" class="form-control" type="password" v-model="reTypeNewPassword">
+                          <small class="text-danger">{{ passwordValidateError }}</small>
+                      </div>
+                      <div class="text-center">
+                          <button class="btn btn-primary w-100">
+                              ##Change Password##
+                              <span v-if="isLoading" class="spinner-border spinner-border-sm ms-2"></span>
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
