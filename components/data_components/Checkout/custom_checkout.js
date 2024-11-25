@@ -486,12 +486,14 @@ const checkoutcustom_checkout = {
             }
         },
         toggleUserSignIn() {
+            window.location.href = `/login`;
+            sleep(1000);
             this.signInUser = !this.signInUser;
-            if (this.signInUser && !this.signUpUser) {
-                setTimeout(() => {
-                    document.querySelector('.signUpButton').addEventListener('click', this.toggleUserSignUp);
-                }, 500);
-            }
+            // if (this.signInUser && !this.signUpUser) {
+            //     setTimeout(() => {
+            //         document.querySelector('.signUpButton').addEventListener('click', this.toggleUserSignUp);
+            //     }, 500);
+            // }
         },
         toggleUserSignUp() {
             this.signInUser = !this.signInUser;

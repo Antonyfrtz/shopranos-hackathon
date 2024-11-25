@@ -50,26 +50,25 @@
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     caret-color: #ffffff;
 }
 
 .form-control:focus {
-    border-color: #a78bfa;
-    box-shadow: 0 0 8px rgba(167, 139, 250, 0.6);
+    border-color: #397b53;
+    box-shadow: 0 0 8px rgba(51, 188, 115, 0.6);
 }
 
 .form-control:focus + .floating-label,
 .form-control:not(:placeholder-shown) + .floating-label {
     top: -8px;
     font-size: 0.75rem;
-    color: #a78bfa;
+    color: #397b53;
 }
 
 /* Buttons */
 .btn-green {
-    background: linear-gradient(135deg, #3b82f6, #9333ea);
+    background: linear-gradient(135deg, #3b82f6, #397b53);
     color: white;
     padding: 0.7rem 1.2rem;
     font-size: 1rem;
@@ -84,7 +83,7 @@
 
 .btn-green:hover {
     transform: scale(1.02);
-    background: linear-gradient(135deg, #9333ea, #3b82f6);
+    background: linear-gradient(135deg, #397b53, #3b82f6);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -106,7 +105,7 @@
 }
 
 .password-toggle-container:hover {
-    color: #a78bfa;
+    color: #397b53;
 }
 
 /* Error Messages */
