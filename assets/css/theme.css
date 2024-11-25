@@ -7601,11 +7601,14 @@ body header.topBarTop.stickyNavbarWrap .topbar {
 .product-single .product-info .bundle-product-variants .attribute .variantValues .variantValue input:disabled ~ label:before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 1px;
-  transform: rotate(-45deg) translateY(-50%);
   top: 50%;
-  left: 0;
+  left: 25%;
+}
+.product-single .product-info .product-variants .attribute .variantValues .variantValue input:disabled ~ label,
+.product-single .product-info .bundle-product-variants .attribute .variantValues .variantValue input:disabled ~ label {
+  background-color: #EBEBE4 !important;
 }
 .product-single .product-info .product-variants .attribute .variantValues .variantValue label,
 .product-single .product-info .bundle-product-variants .attribute .variantValues .variantValue label {
@@ -14862,9 +14865,13 @@ body.hasShadow .textwithimage-wrapper .btn-arrow {
 .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3),.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control,.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select {
   border-top-right-radius:10px;
   border-bottom-right-radius:10px;
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
 }
 
 .input-group.has-validation>:nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),.input-group.has-validation>.dropdown-toggle:nth-last-child(n+4),.input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-control,.input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-select {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
 }

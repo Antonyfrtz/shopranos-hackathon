@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="{{Assets}}/css/custom_footer.css">
+
+<footer class="footer border-top border-theme" :id="'comp-'+this.model.id" :class="this.model?.cssClass">
+    <div :class="[model.footerExtended ? 'container-lg' : 'container']">
+        <div class="row align-items-center justify-content-between flex-wrap gap-3">
+
+            <!-- Logo -->
+            <a v-if="logoExists" class="footer-logo navbar-brand col-md-3 text-center text-md-start" href="/">
+                <img v-if="!imageError" :src="this._getLogoUrl('--footer-bg-color')" :alt="this._company.name" @error="handleImageError" />
+                <span v-else>{{this._company.name}}</span>
+            </a>
+
+            <!-- Menu -->
+            <nav v-if="menuExists" class="footer-menu col-md-6 text-center">
+                <div class="menu-container d-flex justify-content-center gap-4">
+                    <div v-for="nav in AllColumns" class="menu-column">
+                        <a class="menu-title" :href="nav.url">{{nav.navigationTitle}}</a>
+                        <ul v-if="nav.navigations?.length > 0" class="submenu list-unstyled">
+                            <li v-for="subnav in nav.navigations">
+                                <a :href="subnav.url">{{subnav.navigationTitle}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Newsletter -->
+            <div v-if="newsletterExists" class="footer-newsletter col-md-3 text-center">
+                <form @submit.prevent="subscribeEmail">
+                    <div class="input-group">
+                        <input v-model="email" class="form-control" style="border-radius: 50px;border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important;" type="email" name="EMAIL" placeholder="Enter your email" required />
+                        <button class="btn btn-primary" type="submit" name="subscribe">
+                            <span v-bind:class="{hidden: isLoading}">Subscribe</span> 
+                            <span v-bind:class="{hidden: !isLoading}" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <p v-if="!emailIsValid" class="text-danger">Invalid email address.</p>
+                    <p v-if="showEmailValidMessage" class="text-success">Subscribed successfully!</p>
+                </form>
+            </div>
+
+        </div>
+
+            <!-- Social -->
+            <div v-if="socialExists" class="footer-social col-12 text-center mt-4">
+                <ul class="list-unstyled d-flex justify-content-center gap-3 m-0">
+                    <li v-for="social in model.socialBlock.socials">
+                        <a :href="social.url" target="_blank" :title="social.socialName">
+                            <i :class="'icon-' + social.socialName.toLowerCase()"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="row justify-content-center mt-4 text-center">
+            <div class="col-12">
+                <p class="m-0">
+                    &copy; All rights reserved. Powered by
+                    <a :href="this.shopranosUrl" target="_blank">Shopranos</a>. {{globaldata.version}}
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

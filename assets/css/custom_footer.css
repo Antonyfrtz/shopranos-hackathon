@@ -1,0 +1,181 @@
+/* Base Footer Styling */
+.footer {
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: 'Arial', sans-serif; /* Minimal font */
+    padding-top: 1.5rem; /* Reduced padding at the top */
+    padding-bottom: 1.5rem; /* Reduced padding at the bottom */
+}
+
+.footer-logo img {
+    max-height: 80px; /* Smaller logo */
+    margin: 0 auto;
+    display: block;
+}
+
+.footer-logo span {
+    font-size: 1rem; /* Smaller font size for text logo */
+    font-weight: lighter;
+}
+
+/* Footer Menu Styling */
+.footer-menu .menu-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Reduced space between menu items */
+    flex-wrap: wrap;
+}
+
+.footer-menu .menu-column {
+    text-align: left; /* Align text to the left for the menu columns */
+}
+
+.footer-menu .menu-column .menu-title {
+    font-weight: normal;
+    color: #199033;
+    font-size: 1rem; /* Smaller font size */
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-menu .menu-column .submenu li a {
+    color: #777;
+    font-size: 0.9rem; /* Smaller font size for submenu */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-menu .menu-column .submenu li a:hover {
+    color: #199033;
+}
+
+/* Newsletter Section Styling */
+.footer-newsletter .input-group {
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-newsletter .form-control {
+    border-radius: 80px;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.footer-newsletter .btn {
+    border: 1px solid #199033; /* Subtle border using the theme color */
+    background-color: transparent; /* Transparent background for minimalism */
+    color: #199033; /* Text color matches the theme */
+    font-size: 0.9rem; /* Slightly smaller font size for a compact look */
+    padding: 0.5rem 1.5rem; /* Sufficient padding to maintain a clean shape */
+    border-radius: 50px; /* Fully rounded edges */
+    transition: all 0.3s ease;
+    font-weight: normal; /* Lighter font weight for a minimal design */
+}
+
+.footer-newsletter .btn:hover {
+    background-color: #199033; /* Theme color background on hover */
+    color: white; /* Text turns white on hover */
+    border: 1px solid #199033; /* Keep border consistent on hover */
+}
+/* Social Icons Styling */
+.footer-social i {
+    font-size: 1.2rem; /* Smaller social icon size */
+    color: #0e4f1c;
+    transition: color 0.3s ease;
+}
+
+.footer-social i:hover {
+    color: #199033;
+}
+
+.footer-social ul {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-social ul li {
+    margin: 0 8px;
+}
+
+/* Copyright Section Styling */
+.footer .row {
+    margin-top: 1.5rem;
+}
+
+.footer .col-12 p {
+    font-size: 0.8rem; /* Smaller font for copyright text */
+    color: #777;
+}
+
+.footer .col-12 a {
+    color: #199033;
+    text-decoration: none;
+}
+
+.footer .col-12 a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 1.5rem; /* Less padding on smaller devices */
+    }
+
+    .footer-logo img {
+        max-height: 60px; /* Even smaller logo on mobile */
+    }
+
+    .footer-menu .menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-menu .menu-column {
+        margin-bottom: 1.5rem; /* Reduced space between columns */
+    }
+
+    .footer-newsletter {
+        margin-top: 1rem;
+    }
+
+    /* Social Icons Styling */
+    .footer-social {
+        margin-top: 1rem;
+    }
+
+    .footer-menu .menu-column .menu-title {
+        font-size: 0.9rem; /* Reduced font size for menu items */
+    }
+
+    .footer-newsletter .form-control {
+        font-size: 0.9rem;
+    }
+}
+
+/* Avoid large footer on mobile */
+@media (max-width: 480px) {
+    .footer {
+        padding: 1rem; /* Smaller padding for ultra-small devices */
+    }
+
+    .footer-logo img {
+        max-height: 50px; /* Even smaller logo on small devices */
+    }
+
+    .footer-menu .menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-social {
+        margin-top: 1rem;
+    }
+
+    .footer-menu .menu-column .menu-title {
+        font-size: 0.9rem; /* Reduced font size for menu items */
+    }
+}

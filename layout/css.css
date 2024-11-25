@@ -238,7 +238,7 @@
   }
 
   .filterlist-single_product div.offer-container{
-    height: 42vh !important;
+    height: 44vh !important;
   }
 
   .filterlist-single_product div.offer-container div.offer-content img.offer-image{
@@ -551,4 +551,4 @@ h4, h5, h2 {
 .swiper-pagination-bullet-active {
   transform: scale(1.5);
   background: #ff5733;
-} 
+}
