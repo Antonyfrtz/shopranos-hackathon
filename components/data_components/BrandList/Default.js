@@ -31,7 +31,9 @@ const brandlistdefault = {
                 slidesPerGroup: 1,
                 pagination: {
                     el: ".swiper-pagination-" + this.model.id,
-                    clickable: true
+                    clickable: true,
+                    bulletClass: 'custom-bullet', // Custom bullet class
+                    bulletActiveClass: 'custom-bullet-active'
                 },
                 navigation: {
                     nextEl: ".swiper-button-next-" + this.model.id,
