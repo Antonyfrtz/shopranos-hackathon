@@ -222,3 +222,7 @@
         padding-left: 18px;
         padding-right: 18px;
     }
+    input{
+        border-radius:8px;
+        margin-top: 8px;
+    }
