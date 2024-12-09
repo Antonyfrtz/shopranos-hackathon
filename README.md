@@ -15,3 +15,8 @@ https://trial-2267.shopranos.eu/?env=staging
 ![image](https://github.com/user-attachments/assets/bd7f2ac7-3b1d-4cde-b1b7-cfb51737b8c9)
 
 ![image](https://github.com/user-attachments/assets/048fddae-7d42-4172-868e-6231b27c2c5f)
+
+![image](https://github.com/user-attachments/assets/8f0fe874-a91a-46d4-bc13-f277f260a26b)
+
+![image](https://github.com/user-attachments/assets/78edc673-b1ec-439e-ada8-d783062ef073)
+
